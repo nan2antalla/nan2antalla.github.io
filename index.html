@@ -11,10 +11,13 @@
 
     </style>
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <img src="./Logo.svg" alt="">
+            <a href="#portada">
+                <img src="./Logo.svg" alt="">
+            </a>
             <label class="last-name">
                 <label class="last-name1">Santalla</label>
                 <label class="last-name2">De los Angeles</label>
@@ -44,7 +47,7 @@
                 <p>Desarrollador Full Stack, desarrollo web y desarrollo de aplicaciones de escritorio</p>
             </div>
         </div>
-    </section>    
+    </section>
     <section id="acerca"></section>
     <section id="diseno-grafico">
         <div class="left">
@@ -55,12 +58,17 @@
             </div>
         </div>
         <div class="right">
-            <p>Dentro de mi eBook encontrarás trabajos relacionados con artes publicitarias, como diseños para el Laboratorio de Sistemas de UTEPSA (Universidad Tecnológica Privada de Santa Cruz S.A.), piezas promocionales para el gimnasio Total Gym, entre otros. Espero que disfrutes explorarlos.</p>
+            <p>Dentro de mi eBook encontrarás trabajos relacionados con artes publicitarias, como diseños para el
+                Laboratorio de Sistemas de UTEPSA (Universidad Tecnológica Privada de Santa Cruz S.A.), piezas
+                promocionales para el gimnasio Total Gym, entre otros. Espero que disfrutes explorarlos.</p>
         </div>
     </section>
     <section id="diseno-web">
         <div class="right">
-            <p>En mi portafolio de programación podrás explorar una variedad de proyectos, incluyendo sistemas CRUD, formularios interactivos, diseños de páginas web y programas especializados adaptados a diferentes necesidades. Cada proyecto refleja mi enfoque en la funcionalidad, la experiencia del usuario y la optimización del código. Te invito a explorarlos y espero que los disfrutes.</p>
+            <p>En mi portafolio de programación podrás explorar una variedad de proyectos, incluyendo sistemas CRUD,
+                formularios interactivos, diseños de páginas web y programas especializados adaptados a diferentes
+                necesidades. Cada proyecto refleja mi enfoque en la funcionalidad, la experiencia del usuario y la
+                optimización del código. Te invito a explorarlos y espero que los disfrutes.</p>
         </div>
         <div class="left">
             <img src="./pc.jpg" alt="Computadora">
@@ -71,7 +79,7 @@
         </div>
     </section>
     <script>
-        document.getElementById("menu-toggle").addEventListener("click", function() {
+        document.getElementById("menu-toggle").addEventListener("click", function () {
             document.getElementById("nav-links").classList.toggle("active");
         });
 
@@ -80,7 +88,7 @@
             const portada = document.getElementById("portada");
 
             window.addEventListener("scroll", function () {
-                if (window.scrollY > (portada.clientHeight/2)) {
+                if (window.scrollY > (portada.clientHeight / 2)) {
                     header.classList.add("scrolled");
                 } else {
                     header.classList.remove("scrolled");
@@ -88,7 +96,7 @@
             });
         });
 
-        document.addEventListener('scroll', function() {
+        document.addEventListener('scroll', function () {
             const portadaTexts = document.querySelectorAll('.portada-text');
             portadaTexts.forEach(text => {
                 if (window.scrollY > 20) { // Ajusta el valor según sea necesario
@@ -100,4 +108,5 @@
         });
     </script>
 </body>
+
 </html>
