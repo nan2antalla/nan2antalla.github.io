@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round');
+@import url('https://use.fontawesome.com/releases/v6.5.1/css/all.css');
+
 body {
     margin: 0;
     font-family: "Calibri", sans-serif;
@@ -182,7 +185,7 @@ section {
     margin-top: 10px;
     text-shadow: 2px 1px #111;
 }
-
+/*
 #acerca {
     background-color: white;
 }
@@ -193,6 +196,116 @@ section {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
 }
+*/
+.acerca-container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'varela round', sans-serif;
+    line-height: 1.5em;
+}
+
+.acerca-item {
+    --color: #eb904b;
+    width: 27%;
+    height: 50vh;
+    background-color: var(--color);
+    border-radius: 10px;
+    padding: 10px 5px;
+    box-shadow: 
+        #3c40434d 0px 1px 2px 0px,
+        #3c404326 0px 1px 2px 0px;
+    position: relative;
+    cursor: pointer;
+}
+
+.acerca-item::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    z-index: 2;
+    height: 80%;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--color);
+    border-width: 40px 40px 40px 40px;
+    filter: drop-shadow(5px 0 4px #00000094);
+    transition: filter .5s;
+}
+
+.acerca-item:nth-child(2) {
+    --color: #f7c548;
+}
+
+.acerca-item:nth-child(3) {
+    --color: #813085;
+}
+
+.acerca-layer {
+    height: 80%;
+    background-color: #f2f2f2;
+    border: 1px solid #fff;
+    border-radius: inherit;
+    padding: 20px;
+    box-shadow: 
+        #00000012 0px 1px 2px,
+        #00000012 0px 2px 4px,
+        #00000012 0px 4px 8px,
+        #00000012 0px 8px 16px,
+        #00000012 0px 16px 32px,
+        #00000012 0px 32px 64px;
+    position: relative;
+    left: 10px;
+    transition: left .1s;
+}
+
+.acerca-layer h3 {
+    font-weight: 700;
+    text-align: center;
+    color: var(--color);
+}
+
+.acerca-layer h4 {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.acerca-layer p {
+    color: #555;
+}
+
+.acerca-layer span {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: var(--color);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    box-shadow: 
+        #00000012 0px 1px 2px,
+        #00000012 0px 2px 4px,
+        #00000012 0px 4px 8px,
+        #00000012 0px 8px 16px,
+        #00000012 0px 16px 32px,
+        #00000012 0px 32px 64px;
+    position: absolute;
+    font-size: 14px;
+    right: 5px;
+}
+
+.acerca-item:hover::after {
+    filter: drop-shadow(5px 0 4px #0000001a);
+}
+
+.acerca-item:hover .acerca-layer {
+    left: 50px;
+}
+
 
 .acerca-part {
     flex: 1;
