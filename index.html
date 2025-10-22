@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +13,14 @@
 </head>
 
 <body>
+    <div class="container">
     <header>
         <div class="logo">
             <a href="#portada">
                 <img src="./Logo.svg" alt="">
             </a>
             <label class="last-name">
-                <label class="last-name1">Santalla</label>
+                <label class="last-name1">Fernando Santalla</label>
                 <label class="last-name2">De los Angeles</label>
             </label>
         </div>
@@ -49,48 +49,38 @@
             </div>
         </div>
     </section>
-    <section class="acerca">
+    <section class="acerca" id="acerca">
         <div class="acerca-container">
-            <div class="acerca-item">
-                <div class="acerca-layer">
-                    <h3>Acerca de mi</h3>
-                    <p>¡Hola! Soy Fernando, desarrollador y diseñador con experiencia en diseño web, edición de video,
-                        ilustración y desarrollo de software a medida. Me apasiona la creatividad y la tecnología,
-                        combinando ambas para crear soluciones atractivas.
-                    </p>
-                    <p>A lo largo de mi trayectoria, he trabajado en proyectos de diseño publicitario,
-                        programación de aplicaciones. Además, me encanta explorar nuevas tendencias,
-                        aprender constantemente y enfrentar desafíos que me permitan crecer profesionalmente.
-                    </p>
-                    <span><img src="./Fernando.png" alt="Avatar" class="avatar"></span>
+            <div class="acerca-left">
+                <img src="./profile.svg" alt="Acerca de mí">
+                <div class="linea-tiempo">
+                    <div class="linea-tiempo-item">
+                        <h3>2019 - Actualidad</h3>
+                        <p>Asistente de programación - UTEPSA</p>
+                    </div>
+                    <div class="linea-tiempo-item">
+                        <h3>2022</h3>
+                        <p>Taler de python - UTEPSA</p>
+                    </div>
+                    <div class="linea-tiempo-item">
+                        <h3>2021 - 2022</h3>
+                        <p>Diseño gráfico y Marketing Digital – Edudiseño</p>
+                    </div>
+                    <div class="linea-tiempo-item">
+                        <h3>2022</h3>
+                        <p>Experto en Helpdesk - CIFTT</p>
+                    </div>
                 </div>
-                <h4>Acerca de mi</h4>
             </div>
-            <div class="acerca-item">
-                <div class="acerca-layer">
-                    <h3>Lo que hago</h3>
-                    <p>Me especializo en el desarrollo web y la creación de aplicaciones de escritorio en C#, 
-                        además de trabajar con Python para diversas soluciones tecnológicas. 
-                        También tengo experiencia en diseño gráfico, creando piezas publicitarias para redes 
-                        sociales e ilustraciones. Además, brindo soporte técnico a equipos computacionales, 
-                        asegurando su óptimo funcionamiento.
-                    </p>
-                    <span><i class="fa-solid"></i></span>
-                </div>
-                <h4>Lo que hago</h4>
+            <div class="acerca-right">
+                <h2>Acerca de mí</h2>
+                <p>Soy egresado de Ingeniería de Sistemas con experiencia en desarrollo de aplicaciones .NET y Blazor, bases de datos SQL Server y soporte tecnológico.</p>
+                <p>También tengo formación en diseño gráfico y multimedia, lo que me permite crear soluciones que integran tecnología y estética.</p>
             </div>
-            <div class="acerca-item">
-                <div class="acerca-layer">
-                    <h3>Lo que me gusta</h3>
-                    <p>Soy una persona apasionada por la programación, el diseño y la tecnología en general. 
-                        Me encanta aprender, explorar nuevas ideas y compartir conocimientos con los demás. 
-                        Disfruto tanto de los videojuegos como de los juegos de mesa, 
-                        ya que me permiten combinar estrategia, creatividad y diversión.
-                    </p>
-                    <span><i class="fa-solid"></i></span>
-                </div>
-                <h4>Lo que me gusta</h4>
-            </div>
+        </div>
+        
+        <div class="acerca-dowwn">
+            <button>Descargar CV</button>
         </div>
     </section>
     <section id="diseno-grafico">
@@ -150,7 +140,9 @@
                 }
             });
         });
+        
     </script>
+    </div>
 </body>
 
 </html>
