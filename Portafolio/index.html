@@ -5,98 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script defer src="script.js"></script>
 
     <style>
-        .fade-up {
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        :root {
+            --primary-color: #6C63FF;
+            --secondary-color: #2D2D3A;
+            --accent-color: #43E97B;
+            --dark-color: #2D2D3A;
+            --light-color: #F8F9FA;
+            --gradient-1: linear-gradient(45deg, #6C63FF, #43E97B);
+            --gradient-2: linear-gradient(45deg, #2D2D3A, #6C63FF);
         }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
         }
+
         header {
             font-size: 1.3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background-color: transparent;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             color: white;
             position: fixed;
             top: 20px;
             left: 20px;
             right: 20px;
-            width: calc(100% - 80px);
+            width: calc(100% - 100px);
             border-radius: 40px;
             z-index: 1001;
-            transition: background-color 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
+
         header.scrolled {
-            background-color: #333; 
+            background: var(--dark-color);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         }
-        .logo{
+
+        .logo {
             display: flex;
             align-items: center;
         }
-        .logo img{
+
+        .logo img {
             width: 2.8em;
+            transition: transform 0.5s ease;
         }
+
         .logo img:hover {
-            animation: spin 1s ease-out;
+            transform: rotateY(360deg);
         }
-        .last-name{
+
+        .last-name {
             margin-left: 1em;
             display: flex;
             flex-direction: column;
         }
-        .last-name1{
+
+        .last-name1 {
             font-size: 1.5rem;
             font-weight: 800;
         }
-        .last-name2{
+
+        .last-name2 {
             font-size: 1rem;
             font-weight: lighter;
         }
+
         nav {
             margin-right: 20px;
         }
+
         .nav-links {
             list-style: none;
             display: flex;
             gap: 30px;
         }
+
         .nav-links li {
             display: inline;
         }
+
         .nav-links a {
             text-decoration: none;
             color: white;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
         }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         .menu-toggle {
             display: none;
             font-size: 2em;
             cursor: pointer;
             padding: 5px;
         }
+
         section {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         #portada {
             background: url('./portada.svg') no-repeat center center/cover;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center;
             width: 100vw;
             height: 100vh;
             color: white;
             text-align: center;
-            font-family: 'Calibri', sans-serif;
         }
 
         .portada-container {
@@ -113,9 +157,12 @@
         }
 
         .portada-left h2, .portada-right h2 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin: 0;
             text-shadow: 4px 4px #111;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .portada-left p, .portada-right p {
@@ -125,12 +172,108 @@
             margin-top: 10px;
             text-shadow: 2px 1px #111;
         }
+
         #acerca {
-            background-color: white;
+            background-color: var(--light-color);
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 0;
         }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding: 2.5rem;
+        }
+
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-1);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
         #diseno-grafico, #diseno-web {
             display: flex;
         }
+
         .left, .right {
             width: 50%;
             height: 100%;
@@ -140,11 +283,13 @@
             padding: 20px;
             box-sizing: border-box;
         }
+
         .left {
             position: relative;
             color: white;
             text-align: center;
         }
+
         .left img, .right img {
             width: 100%;
             height: 100%;
@@ -154,13 +299,16 @@
             left: 0;
             z-index: -1;
         }
+
         .content {
             position: relative;
             z-index: 1;
         }
+
         .right {
             background-color: white;
         }
+
         button {
             margin-top: 10px;
             padding: 10px 15px;
@@ -170,6 +318,7 @@
             color: white;
             font-size: 1em;
         }
+
         @keyframes slideUp {
             0% {
                 opacity: 0;
@@ -180,6 +329,7 @@
                 transform: translateY(0);
             }
         }
+
         @keyframes spin {
             0% {
                 transform: rotateY(0deg);
@@ -188,6 +338,13 @@
                 transform: rotateY(720deg);
             }
         }
+
+        @media (max-width: 1024px) {
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             header {
                 margin: 0;
@@ -197,6 +354,7 @@
                 right: 0;
                 top: 0;
             }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -207,28 +365,148 @@
                 width: 200px;
                 padding: 10px;
             }
+
             .nav-links.active {
                 display: flex;
             }
+
             .menu-toggle {
                 display: block;
                 font-size: 2.5em;
                 padding: 10px;
             }
+
             .portada-container {
                 flex-direction: column;
+                gap: 2rem;
             }
+
             .portada-left, .portada-right {
                 width: 100%;
                 margin-bottom: 20px;
             }
+
             #diseno-grafico, #diseno-web {
                 flex-direction: column;
             }
+
             .left, .right {
                 width: 100%;
                 height: 50%;
             }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .portada-left h2, .portada-right h2 {
+                font-size: 3rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .about-content {
+                padding: 2rem;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+            }
+
+            .skill-card {
+                padding: 1.5rem;
+            }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .contact-section {
+            background: var(--gradient-2);
+            padding: 4rem 2rem;
+            color: white;
+            margin-bottom: 0;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            margin: 0 15px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: var(--accent-color);
+        }
+
+        .portfolio-btn {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+        }
+
+        .portfolio-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+        }
+
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 0;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
         }
     </style>
 </head>
@@ -254,43 +532,93 @@
     </header>
     <section id="portada">
         <div class="portada-container">
-            <div class="portada-left portada-text">
+            <div class="portada-left">
                 <h2>Designer</h2>
                 <p>Diseñador de artes publicitarias, diseño web e interfaces de usuario</p>
             </div>
-            <div class="portada-center">
-            </div>
-            <div class="portada-right portada-text">
+            <div class="portada-right">
                 <h2>&lt;Developer&gt;</h2>
                 <p>Desarrollador Full Stack, desarrollo web y desarrollo de aplicaciones de escritorio</p>
             </div>
         </div>
     </section>    
-    <section id="acerca"></section>
+    <section id="acerca">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="section-title">Acerca de Mí</h2>
+                <p>Soy un desarrollador Full Stack y diseñador apasionado por crear experiencias digitales únicas y funcionales. Mi enfoque combina la estética del diseño con la funcionalidad del desarrollo, permitiéndome crear soluciones completas y atractivas.</p>
+                <p>Con experiencia en diseño gráfico y desarrollo web, me especializo en crear interfaces intuitivas y experiencias de usuario excepcionales. Mi objetivo es transformar ideas en realidades digitales impactantes.</p>
+
+                <h2 class="section-title">Mis Habilidades</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <i class="fas fa-paint-brush fa-3x"></i>
+                        <h3>Diseño Gráfico</h3>
+                        <p>Photoshop, Illustrator, InDesign</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-code fa-3x"></i>
+                        <h3>Desarrollo Frontend</h3>
+                        <p>HTML, CSS, JavaScript, React</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-server fa-3x"></i>
+                        <h3>Desarrollo Backend</h3>
+                        <p>Node.js, Python, SQL</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-mobile-alt fa-3x"></i>
+                        <h3>Diseño UI/UX</h3>
+                        <p>Figma, Adobe XD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="diseno-grafico">
         <div class="left">
-            <img src="./design.jpg" alt="Paisaje">
+            <img src="./design.jpg" alt="Diseño Gráfico">
             <div class="content">
-                <h2>Portafolio de Imágenes</h2>
-                <button>Ver Portafolio</button>
+                <h2>Diseño Gráfico</h2>
+                <a href="portfolio-design.html" class="portfolio-btn">Ver Portafolio</a>
             </div>
         </div>
         <div class="right">
-            <p>Dentro de mi eBook encontrarás trabajos relacionados con artes publicitarias, como diseños para el Laboratorio de Sistemas de UTEPSA (Universidad Tecnológica Privada de Santa Cruz S.A.), piezas promocionales para el gimnasio Total Gym, entre otros. Espero que disfrutes explorarlos.</p>
+            <p>Dentro de mi eBook encontrarás trabajos relacionados con artes publicitarias, como diseños para el Laboratorio de Sistemas de UTEPSA (Universidad Tecnológica Privada de Santa Cruz S.A.), piezas promocionales para el gimnasio Total Gym, entre otros. Cada proyecto refleja mi pasión por el diseño y la atención al detalle.</p>
         </div>
     </section>
+
     <section id="diseno-web">
         <div class="right">
-            <p>En mi portafolio de programación podrás explorar una variedad de proyectos, incluyendo sistemas CRUD, formularios interactivos, diseños de páginas web y programas especializados adaptados a diferentes necesidades. Cada proyecto refleja mi enfoque en la funcionalidad, la experiencia del usuario y la optimización del código. Te invito a explorarlos y espero que los disfrutes.</p>
+            <p>En mi portafolio de programación podrás explorar una variedad de proyectos, incluyendo sistemas CRUD, formularios interactivos, diseños de páginas web y programas especializados adaptados a diferentes necesidades. Cada proyecto refleja mi enfoque en la funcionalidad, la experiencia del usuario y la optimización del código.</p>
         </div>
         <div class="left">
-            <img src="./pc.jpg" alt="Computadora">
+            <img src="./pc.jpg" alt="Desarrollo Web">
             <div class="content">
-                <h2>Portafolio de Páginas</h2>
-                <button>Ver Portafolio</button>
+                <h2>Desarrollo Web</h2>
+                <a href="portfolio-dev.html" class="portfolio-btn">Ver Portafolio</a>
             </div>
         </div>
     </section>
+
+    <section id="contacto" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">Contacto</h2>
+            <p>¿Interesado en trabajar juntos? ¡Hablemos!</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
+                <a href="mailto:tu@email.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tu Nombre. Todos los derechos reservados.</p>
+    </footer>
+
     <script>
         document.getElementById("menu-toggle").addEventListener("click", function() {
             document.getElementById("nav-links").classList.toggle("active");

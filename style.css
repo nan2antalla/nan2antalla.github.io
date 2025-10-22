@@ -2,7 +2,13 @@ body {
     margin: 0;
     font-family: "Calibri", sans-serif;
 }
-
+.container {
+    width: 70%;
+    height: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: #222;
+}
 header {
     font-size: 16px;
     display: flex;
@@ -12,17 +18,17 @@ header {
     background-color: transparent;
     color: white;
     position: fixed;
-    top: 20px;
-    left: 15%;
-    right: 15%;
-    width: calc(100% - 30%);
+    top: 10px;
+    left: 19vw;
+    right: 20vw;
+    width: 60vw;
     border-radius: 40px;
     z-index: 1001;
     transition: background-color 0.5s ease-in-out;
 }
 
 header.scrolled {
-    background-color: #333;
+    background-color: #222;
 }
 
 .logo {
@@ -146,7 +152,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100vw;
+    width: 70vw;
     height: 100vh;
     color: white;
     text-align: center;
@@ -155,7 +161,7 @@ section {
 
 .portada-container {
     display: flex;
-    width: 80%;
+    width: 70%;
     max-width: 1200px;
     justify-content: space-around;
     align-items: center;
@@ -183,18 +189,90 @@ section {
     text-shadow: 2px 1px #111;
 }
 
-#acerca {
+.acerca {
+    width: 70vw;
+    height: 100vh;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.acerca-container {
+    width: 70vw;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 250px 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.acerca-left {
+    width: 35vw;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.acerca-left img {
+    width: 120px;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+.linea-tiempo {
+    padding-top: 20px;
+}
+.linea-tiempo-item {
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 3px #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.linea-tiempo-item h3, .linea-tiempo-item p {
+    margin: 0;
+}
+
+.acerca-right {
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 3px #ddd;
+    width: 35vw;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.acerca-dowwn {
+    width: 70vw;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #diseno-grafico,
 #diseno-web {
+    width: 70vw;
     display: flex;
 }
 
 .left,
 .right {
-    width: 50%;
+    width: 35vw;
     height: 100%;
     display: flex;
     align-items: center;

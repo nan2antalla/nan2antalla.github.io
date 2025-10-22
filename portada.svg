@@ -74,8 +74,9 @@
        x2="291.60199"
        y2="144.57408"
        gradientUnits="userSpaceOnUse" /></defs><g
-     id="layer1"><rect
-       style="opacity:1;fill:url(#linearGradient13960);fill-opacity:1;stroke:url(#linearGradient70583);stroke-width:0.722698;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.301181"
+     id="layer1"
+     style="fill:#222222;fill-opacity:1"><rect
+       style="opacity:1;fill:#222222;fill-opacity:1;stroke:url(#linearGradient70583);stroke-width:0.722698;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.301181"
        id="rect234"
        width="294.46484"
        height="294.05591"
@@ -89,7 +90,7 @@
        x="-263.97775"
        y="-77.847946"
        transform="rotate(-90)"
-       style="display:none" /></g><g
+       style="display:none;fill:#222222;fill-opacity:1" /></g><g
      id="g71423"
      transform="matrix(1.0367513,0,0,1.0367513,-1.7720846,-2.656715)"><g
        id="layer2"><path
