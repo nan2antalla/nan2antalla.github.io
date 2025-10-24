@@ -1,148 +1,383 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-
-    <style>
-
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portafolio — Fernando Santalla</title>
+    <meta name="description"
+        content="Portafolio de Fernando Santalla: desarrollador .NET/Blazor y diseñador multimedia." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="container">
-    <header>
-        <div class="logo">
-            <a href="#portada">
-                <img src="./Logo.svg" alt="">
-            </a>
-            <label class="last-name">
-                <label class="last-name1">Fernando Santalla</label>
-                <label class="last-name2">De los Angeles</label>
-            </label>
-        </div>
-        <nav>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#acerca">Acerca de mí</a></li>
-                <li><a href="#diseno-grafico">Diseño Gráfico</a></li>
-                <li><a href="#diseno-web">Diseño Web</a></li>
-            </ul>
-            <div class="menu-toggle" id="menu-toggle">
-                &#9776;
-            </div>
-        </nav>
-    </header>
-    <section id="portada">
-        <div class="portada-container">
-            <div class="portada-left portada-text">
-                <h2>Designer</h2>
-                <p>Diseñador de artes publicitarias, diseño web e interfaces de usuario</p>
-            </div>
-            <div class="portada-center">
-            </div>
-            <div class="portada-right portada-text">
-                <h2>&lt;Developer&gt;</h2>
-                <p>Desarrollador Full Stack, desarrollo web y desarrollo de aplicaciones de escritorio</p>
-            </div>
-        </div>
-    </section>
-    <section class="acerca" id="acerca">
-        <div class="acerca-container">
-            <div class="acerca-left">
-                <img src="./profile.svg" alt="Acerca de mí">
-                <div class="linea-tiempo">
-                    <div class="linea-tiempo-item">
-                        <h3>2019 - Actualidad</h3>
-                        <p>Asistente de programación - UTEPSA</p>
-                    </div>
-                    <div class="linea-tiempo-item">
-                        <h3>2022</h3>
-                        <p>Taler de python - UTEPSA</p>
-                    </div>
-                    <div class="linea-tiempo-item">
-                        <h3>2021 - 2022</h3>
-                        <p>Diseño gráfico y Marketing Digital – Edudiseño</p>
-                    </div>
-                    <div class="linea-tiempo-item">
-                        <h3>2022</h3>
-                        <p>Experto en Helpdesk - CIFTT</p>
-                    </div>
-                </div>
-            </div>
-            <div class="acerca-right">
-                <h2>Acerca de mí</h2>
-                <p>Soy egresado de Ingeniería de Sistemas con experiencia en desarrollo de aplicaciones .NET y Blazor, bases de datos SQL Server y soporte tecnológico.</p>
-                <p>También tengo formación en diseño gráfico y multimedia, lo que me permite crear soluciones que integran tecnología y estética.</p>
-            </div>
-        </div>
-        
-        <div class="acerca-dowwn">
-            <button>Descargar CV</button>
-        </div>
-    </section>
-    <section id="diseno-grafico">
-        <div class="left">
-            <img src="./design.jpg" alt="Paisaje">
-            <div class="content">
-                <h2>Portafolio de Imágenes</h2>
-                <button>Ver Portafolio</button>
-            </div>
-        </div>
-        <div class="right">
-            <p>Dentro de mi eBook encontrarás trabajos relacionados con artes publicitarias, como diseños para el
-                Laboratorio de Sistemas de UTEPSA (Universidad Tecnológica Privada de Santa Cruz S.A.), piezas
-                promocionales para el gimnasio Total Gym, entre otros. Espero que disfrutes explorarlos.</p>
-        </div>
-    </section>
-    <section id="diseno-web">
-        <div class="right">
-            <p>En mi portafolio de programación podrás explorar una variedad de proyectos, incluyendo sistemas CRUD,
-                formularios interactivos, diseños de páginas web y programas especializados adaptados a diferentes
-                necesidades. Cada proyecto refleja mi enfoque en la funcionalidad, la experiencia del usuario y la
-                optimización del código. Te invito a explorarlos y espero que los disfrutes.</p>
-        </div>
-        <div class="left">
-            <img src="./pc.jpg" alt="Computadora">
-            <div class="content">
-                <h2>Portafolio de Páginas</h2>
-                <button>Ver Portafolio</button>
-            </div>
-        </div>
-    </section>
-    <script>
-        document.getElementById("menu-toggle").addEventListener("click", function () {
-            document.getElementById("nav-links").classList.toggle("active");
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const header = document.querySelector("header");
-            const portada = document.getElementById("portada");
-
-            window.addEventListener("scroll", function () {
-                if (window.scrollY > (portada.clientHeight / 2)) {
-                    header.classList.add("scrolled");
-                } else {
-                    header.classList.remove("scrolled");
-                }
-            });
-        });
-
-        document.addEventListener('scroll', function () {
-            const portadaTexts = document.querySelectorAll('.portada-text');
-            portadaTexts.forEach(text => {
-                if (window.scrollY > 20) { // Ajusta el valor según sea necesario
-                    text.classList.add('fade-up');
-                } else {
-                    text.classList.remove('fade-up');
-                }
-            });
-        });
-        
-    </script>
+    <!-- Background blobs / parallax -->
+    <div class="bg-blobs" aria-hidden="true">
+        <div class="blob b1" data-parallax="-30"></div>
+        <div class="blob b2" data-parallax="20"></div>
     </div>
-</body>
 
+    <!-- ===== Header ===== -->
+    <header>
+        <div class="container">
+            <div class="nav">
+                <a class="logo" href="#portada" aria-label="Ir a inicio">
+                    <img src="./Logo.svg" alt="Logo de Fernando" />
+                    <span class="name"><b>Fernando Santalla</b><small>De los Ángeles</small></span>
+                </a>
+                <nav>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+                    <div class="nav-links" id="navLinks">
+                        <a href="#acerca">Acerca</a>
+                        <a href="#diseno-grafico">Diseño Gráfico</a>
+                        <a href="#diseno-web">Diseño Web</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Portada ===== -->
+  <section id="portada">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-col reveal">
+          <h1><span class="gradient">Diseño</span> &lt;Desarrollo&gt;</h1>
+          <p class="lead">Diseñador de artes publicitarias e interfaces de usuario. Desarrollador Full‑Stack (.NET/Blazor/SQL Server) para web y escritorio. Creo soluciones funcionales y visualmente atractivas.</p>
+          <div class="cta">
+            <a class="btn" href="#contacto">Contáctame</a>
+            <a class="btn ghost" href="#acerca">Saber más</a>
+          </div>
+        </div>
+        <div class="hero-col reveal">
+          <div class="hero-card" aria-hidden="true">
+            <img src="./Fernado.png" alt="Foto / Avatar" style="position:absolute;inset:12%;width:76%;height:76%;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.4))" />
+            <div class="spark"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Acerca de mí ===== -->
+  <section id="acerca">
+    <div class="container">
+      <div class="section-title">
+        <h2>Acerca de mí</h2>
+        <p class="section-sub">Egresado de Ingeniería de Sistemas con experiencia en .NET, Blazor y SQL Server. Formación en diseño gráfico y multimedia para unir tecnología y estética.</p>
+      </div>
+      <div class="about">
+        <div class="card reveal">
+          <h3>Perfil</h3>
+          <p style="color:var(--muted)">Desarrollo aplicaciones web y de escritorio, integro hardware biométrico ZKTeco y construyo interfaces centradas en el usuario. También produzco piezas gráficas para campañas.</p>
+          <div class="timeline">
+            <div class="tl-item"><b>2019 — Actualidad</b><br/>Asistente de Programación – UTEPSA</div>
+            <div class="tl-item"><b>2022</b><br/>Taller de Python – UTEPSA</div>
+            <div class="tl-item"><b>2021 — 2022</b><br/>Diseño Gráfico & Marketing – Edudiseño</div>
+            <div class="tl-item"><b>2022</b><br/>Experto en Helpdesk – CIFTT</div>
+          </div>
+          <div class="download"><a class="btn" href="#" id="btnCV">Descargar CV</a></div>
+        </div>
+        <div class="card reveal">
+          <h3>Stack principal</h3>
+          <div class="chips">
+            <span class="chip">C#</span><span class="chip">.NET</span><span class="chip">Blazor</span>
+            <span class="chip">SQL Server</span><span class="chip">JavaScript</span><span class="chip">Python</span>
+            <span class="chip">Illustrator</span><span class="chip">Photoshop</span>
+          </div>
+          <h3 style="margin-top:16px">Lo que hago</h3>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>Apps con .NET y Blazor (web/desktop)</li>
+            <li>Integración con ZKTeco (control de asistencia)</li>
+            <li>Diseño de UI y piezas publicitarias</li>
+            <li>Consultas y modelos de datos en SQL Server</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== Experiencia (Timeline) ===== -->
+  <style>
+    /* Timeline vertical alternado */
+    .vtl{position:relative;display:grid;gap:22px}
+    .vtl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--ring);transform:translateX(-50%)}
+    .vtl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+    .vtl-marker{position:absolute;left:50%;top:18px;width:14px;height:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 6px rgba(129,140,248,.18)}
+    .vtl-card{background:linear-gradient(180deg,var(--glass),transparent);border:1px solid var(--ring);border-radius:16px;padding:16px}
+    .vtl h3{margin:0 0 6px}
+    .vtl .periodo{font-size:12px;color:var(--muted);margin-bottom:8px}
+    /* Alternado: impares a la izquierda, pares a la derecha */
+    .vtl-item:nth-child(odd) .vtl-card:first-child{grid-column:1}
+    .vtl-item:nth-child(odd) .vtl-card:last-child{grid-column:2}
+    .vtl-item:nth-child(even) .vtl-card:first-child{grid-column:2}
+    .vtl-item:nth-child(even) .vtl-card:last-child{grid-column:1}
+    /* Mobile: columna única */
+    @media (max-width: 900px){
+      .vtl::before{left:20px}
+      .vtl-item{grid-template-columns:1fr}
+      .vtl-marker{left:20px}
+      .vtl-item .vtl-card{grid-column:1}
+    }
+  </style>
+  <section id="experiencia">
+    <div class="container">
+      <div class="section-title">
+        <h2>Experiencia</h2>
+        <p class="section-sub">Historia laboral basada en tu CV: desarrollo con .NET/Blazor, integración ZKTeco y soporte tecnológico.</p>
+      </div>
+      <div class="vtl">
+        <!-- 2023 — Actual | UTEPSA Asistente de Programación TI -->
+        <div class="vtl-item reveal">
+          <span class="vtl-marker" aria-hidden="true"></span>
+          <div class="vtl-card">
+            <h3>Asistente de Programación TI — UTEPSA</h3>
+            <div class="periodo">Sep 2023 — Actual</div>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Aplicaciones con .NET y Blazor</li>
+              <li>Integración con dispositivos biométricos ZKTeco</li>
+              <li>Módulos de RRHH y Marketing</li>
+              <li>Consultas y administración en SQL Server</li>
+            </ul>
+          </div>
+          <div class="vtl-card">
+            <b>Stack</b>
+            <div class="chips" style="margin-top:8px">
+              <span class="chip">.NET</span><span class="chip">Blazor</span><span class="chip">SQL Server</span><span class="chip">ZKTeco</span>
+            </div>
+          </div>
+        </div>
+        <!-- 2022 — 2023 | UTEPSA Auxiliar de Laboratorio de Sistemas -->
+        <div class="vtl-item reveal">
+          <span class="vtl-marker" aria-hidden="true"></span>
+          <div class="vtl-card">
+            <h3>Auxiliar de Laboratorio de Sistemas — UTEPSA</h3>
+            <div class="periodo">Feb 2022 — Ago 2023</div>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Gestión de equipamiento tecnológico</li>
+              <li>Diseño gráfico y desarrollo web</li>
+              <li>Mantenimiento preventivo y correctivo</li>
+            </ul>
+          </div>
+          <div class="vtl-card">
+            <b>Enfoques</b>
+            <div class="chips" style="margin-top:8px">
+              <span class="chip">Soporte</span><span class="chip">Diseño</span><span class="chip">Web</span>
+            </div>
+          </div>
+        </div>
+        <!-- 2020 | UTEPSA Aux CDT Educativo -->
+        <div class="vtl-item reveal">
+          <span class="vtl-marker" aria-hidden="true"></span>
+          <div class="vtl-card">
+            <h3>Auxiliar CDT Educativo — UTEPSA</h3>
+            <div class="periodo">Jun 2020 — Dic 2020</div>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Atención al cliente y soporte en Moodle</li>
+              <li>Producción de multimedios y videos</li>
+            </ul>
+          </div>
+          <div class="vtl-card">
+            <b>Herramientas</b>
+            <div class="chips" style="margin-top:8px">
+              <span class="chip">Moodle</span><span class="chip">Edición de video</span>
+            </div>
+          </div>
+        </div>
+        <!-- 2020 | UTEPSA Aux Lab Sistemas I -->
+        <div class="vtl-item reveal">
+          <span class="vtl-marker" aria-hidden="true"></span>
+          <div class="vtl-card">
+            <h3>Auxiliar de Laboratorio de Sistemas — UTEPSA</h3>
+            <div class="periodo">Feb 2020 — Jun 2020</div>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Gestión de equipamiento y mantenimiento</li>
+            </ul>
+          </div>
+          <div class="vtl-card">
+            <b>Soporte</b>
+            <div class="chips" style="margin-top:8px">
+              <span class="chip">Hardware</span><span class="chip">Sistemas</span>
+            </div>
+          </div>
+        </div>
+        <!-- 2018 | Cetus Group -->
+        <div class="vtl-item reveal">
+          <span class="vtl-marker" aria-hidden="true"></span>
+          <div class="vtl-card">
+            <h3>Analista Junior de Tecnología — Cetus Group SRL</h3>
+            <div class="periodo">Feb 2018 — Dic 2018</div>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Inventario y montaje de equipamiento</li>
+              <li>Contenido audiovisual para redes</li>
+            </ul>
+          </div>
+          <div class="vtl-card">
+            <b>Áreas</b>
+            <div class="chips" style="margin-top:8px">
+              <span class="chip">Infraestructura</span><span class="chip">Audiovisual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Proyectos Destacados ===== -->
+  <section id="proyectos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Proyectos destacados</h2>
+        <p class="section-sub">Una selección técnica y creativa.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="project reveal">
+          <div class="thumb"></div>
+          <div class="meta">
+            <h3>CAE – Control de Asistencia</h3>
+            <p style="color:var(--muted)">Captura en tiempo real de marcaciones y visualización en pantallas de molinetes.</p>
+            <div class="chips"><span class="chip">.NET</span><span class="chip">SQL Server</span><span class="chip">ZKTeco</span></div>
+          </div>
+        </article>
+        <article class="project reveal">
+          <div class="thumb"></div>
+          <div class="meta">
+            <h3>Módulo de Marketing Educativo</h3>
+            <p style="color:var(--muted)">Gestión de oportunidades, seguimiento y reportes para admisiones.</p>
+            <div class="chips"><span class="chip">Blazor</span><span class="chip">.NET</span><span class="chip">SQL Server</span></div>
+          </div>
+        </article>
+        <article class="project reveal">
+          <div class="thumb"></div>
+          <div class="meta">
+            <h3>Aplicación Web Académica</h3>
+            <p style="color:var(--muted)">Registro de asistencia y evaluaciones con enfoque en UX.</p>
+            <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">Docker</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Diseño Gráfico ===== -->
+  <section id="diseno-grafico">
+    <div class="container">
+      <div class="section-title">
+        <h2>Diseño gráfico</h2>
+        <p class="section-sub">Branding, afiches y arte digital para campañas.</p>
+      </div>
+      <div class="split">
+        <div class="media-card reveal">
+          <img src="./design.jpg" alt="Mosaico de diseños" />
+          <div class="overlay"></div>
+          <div class="content">
+            <h3>Portafolio de Imágenes</h3>
+            <p style="color:#e5e7eb">Explora piezas para UTEPSA, Total Gym y más.</p>
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Ver Portafolio</a>
+          </div>
+        </div>
+        <div class="card reveal">
+          <p style="color:var(--muted)">Dentro de mi eBook encontrarás trabajos relacionados con artes publicitarias: piezas para el Laboratorio de Sistemas de UTEPSA, materiales promocionales para Total Gym y otros proyectos personales. ¡Disfruta explorarlos!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Diseño / Desarrollo Web ===== -->
+  <section id="diseno-web">
+    <div class="container">
+      <div class="section-title">
+        <h2>Desarrollo web</h2>
+        <p class="section-sub">Sistemas CRUD, formularios interactivos y páginas optimizadas.</p>
+      </div>
+      <div class="split">
+        <div class="card reveal">
+          <p style="color:var(--muted)">En mi portafolio técnico podrás explorar proyectos con foco en funcionalidad, UX y calidad de código. Incluyo sistemas CRUD, dashboards y microservicios cuando aplica.</p>
+        </div>
+        <div class="media-card reveal">
+          <img src="./pc.jpg" alt="Pantalla de computadora" />
+          <div class="overlay"></div>
+          <div class="content">
+            <h3>Portafolio de Páginas</h3>
+            <p style="color:#e5e7eb">Demos y prototipos navegables.</p>
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Ver Portafolio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contacto ===== -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contacto</h2>
+        <p class="section-sub">¿Tienes un proyecto en mente? Conversemos.</p>
+      </div>
+      <div class="contact">
+        <div class="card reveal"><b>Correo</b><br/><a href="mailto:nandosantalla@gmail.com">nandosantalla@gmail.com</a></div>
+        <div class="card reveal"><b>WhatsApp</b><br/><a href="https://wa.me/59175331250" target="_blank" rel="noreferrer">+591 753 31250</a></div>
+        <div class="card reveal"><b>Ubicación</b><br/><span style="color:var(--muted)">Santa Cruz de la Sierra, Bolivia</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Fernando Santalla — Desarrollador & Diseñador</div>
+  </footer>
+
+  <script>
+    // ===== Utilidades visuales =====
+    const $ = (s,sc=document)=>sc.querySelector(s); const $$=(s,sc=document)=>Array.from(sc.querySelectorAll(s));
+
+    // Año dinámico
+    $('#year').textContent = new Date().getFullYear();
+
+    // Menú móvil
+    const toggle = $('#menuToggle');
+    const links = $('#navLinks');
+    toggle?.addEventListener('click',()=>links.classList.toggle('open'));
+
+    // Scroll spy / enlace activo
+    const sections = ['portada','acerca','experiencia','proyectos','diseno-grafico','diseno-web','contacto'].map(id=>document.getElementById(id));
+    const navAnchors = $$('.nav-links a');
+    const spy = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          navAnchors.forEach(a=>a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
+        }
+      })
+    },{root:null,threshold:.4});
+    sections.forEach(s=>spy.observe(s));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(({target,isIntersecting})=>{
+        if(isIntersecting){ target.classList.add('in-view'); io.unobserve(target); }
+      })
+    },{threshold:.2});
+    $$('.reveal').forEach(el=>io.observe(el));
+
+    // Parallax blobs
+    const blobs = $$('.blob');
+    window.addEventListener('scroll',()=>{
+      const y = window.scrollY;
+      blobs.forEach(b=>{
+        const f = Number(b.dataset.parallax||0);
+        b.style.transform = `translateY(${y * f / 100}px)`;
+      })
+    });
+
+    // Botón CV: reemplaza el # por tu URL de PDF
+    $('#btnCV').addEventListener('click',(e)=>{
+      const url = '#'; // TODO: poner link a tu PDF
+      if(url === '#'){ e.preventDefault(); alert('Agrega el enlace a tu CV en btnCV (index.html).'); }
+    });
+  </script>
+</body>
 </html>
