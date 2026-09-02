@@ -2,382 +2,390 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portafolio — Fernando Santalla</title>
-    <meta name="description"
-        content="Portafolio de Fernando Santalla: desarrollador .NET/Blazor y diseñador multimedia." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fernando Santalla — Diseño y desarrollo</title>
+  <meta name="description"
+    content="Fernando Santalla De los Ángeles. Desarrollador de software: sistemas empresariales, bases de datos y experiencias web con identidad propia. Santa Cruz, Bolivia." />
+  <meta name="author" content="Fernando Santalla De los Ángeles" />
+  <link rel="icon" href="./assets/img/marca/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-    <!-- Background blobs / parallax -->
-    <div class="bg-blobs" aria-hidden="true">
-        <div class="blob b1" data-parallax="-30"></div>
-        <div class="blob b2" data-parallax="20"></div>
-    </div>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <canvas id="mesh" aria-hidden="true"></canvas>
 
-    <!-- ===== Header ===== -->
-    <header>
-        <div class="container">
-            <div class="nav">
-                <a class="logo" href="#portada" aria-label="Ir a inicio">
-                    <img src="./Logo.svg" alt="Logo de Fernando" />
-                    <span class="name"><b>Fernando Santalla</b><small>De los Ángeles</small></span>
-                </a>
-                <nav>
-                    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
-                    <div class="nav-links" id="navLinks">
-                        <a href="#acerca">Acerca</a>
-                        <a href="#diseno-grafico">Diseño Gráfico</a>
-                        <a href="#diseno-web">Diseño Web</a>
-                        <a href="#contacto">Contacto</a>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- ===== Portada ===== -->
-  <section id="portada">
+  <header>
     <div class="container">
-      <div class="hero">
-        <div class="hero-col reveal">
-          <h1><span class="gradient">Diseño</span> &lt;Desarrollo&gt;</h1>
-          <p class="lead">Diseñador de artes publicitarias e interfaces de usuario. Desarrollador Full‑Stack (.NET/Blazor/SQL Server) para web y escritorio. Creo soluciones funcionales y visualmente atractivas.</p>
-          <div class="cta">
-            <a class="btn" href="#contacto">Contáctame</a>
-            <a class="btn ghost" href="#acerca">Saber más</a>
+      <div class="nav">
+        <a class="logo" href="#portada" aria-label="Inicio — Fernando Santalla">
+          <img src="./assets/img/marca/logo.svg" alt="" width="40" height="40" />
+          <span class="name">
+            <b>Fernando Santalla</b>
+            <small>De los Ángeles</small>
+          </span>
+        </a>
+        <nav>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú"
+            aria-controls="navLinks" aria-expanded="false">☰</button>
+          <div class="nav-links" id="navLinks">
+            <a href="#proyectos">Proyectos</a>
+            <a href="#acerca">Sobre mí</a>
+            <a href="#lab">Lab</a>
+            <a href="#contacto">Contacto</a>
           </div>
-        </div>
-        <div class="hero-col reveal">
-          <div class="hero-card" aria-hidden="true">
-            <img src="./Fernado.png" alt="Foto / Avatar" style="position:absolute;inset:12%;width:76%;height:76%;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.4))" />
-            <div class="spark"></div>
-          </div>
-        </div>
+        </nav>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- ===== Acerca de mí ===== -->
-  <section id="acerca">
-    <div class="container">
-      <div class="section-title">
-        <h2>Acerca de mí</h2>
-        <p class="section-sub">Egresado de Ingeniería de Sistemas con experiencia en .NET, Blazor y SQL Server. Formación en diseño gráfico y multimedia para unir tecnología y estética.</p>
-      </div>
-      <div class="about">
-        <div class="card reveal">
-          <h3>Perfil</h3>
-          <p style="color:var(--muted)">Desarrollo aplicaciones web y de escritorio, integro hardware biométrico ZKTeco y construyo interfaces centradas en el usuario. También produzco piezas gráficas para campañas.</p>
-          <div class="timeline">
-            <div class="tl-item"><b>2019 — Actualidad</b><br/>Asistente de Programación – UTEPSA</div>
-            <div class="tl-item"><b>2022</b><br/>Taller de Python – UTEPSA</div>
-            <div class="tl-item"><b>2021 — 2022</b><br/>Diseño Gráfico & Marketing – Edudiseño</div>
-            <div class="tl-item"><b>2022</b><br/>Experto en Helpdesk – CIFTT</div>
-          </div>
-          <div class="download"><a class="btn" href="#" id="btnCV">Descargar CV</a></div>
-        </div>
-        <div class="card reveal">
-          <h3>Stack principal</h3>
-          <div class="chips">
-            <span class="chip">C#</span><span class="chip">.NET</span><span class="chip">Blazor</span>
-            <span class="chip">SQL Server</span><span class="chip">JavaScript</span><span class="chip">Python</span>
-            <span class="chip">Illustrator</span><span class="chip">Photoshop</span>
-          </div>
-          <h3 style="margin-top:16px">Lo que hago</h3>
-          <ul style="margin:0;padding-left:18px;color:var(--muted)">
-            <li>Apps con .NET y Blazor (web/desktop)</li>
-            <li>Integración con ZKTeco (control de asistencia)</li>
-            <li>Diseño de UI y piezas publicitarias</li>
-            <li>Consultas y modelos de datos en SQL Server</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===== Experiencia (Timeline) ===== -->
-  <style>
-    /* Timeline vertical alternado */
-    .vtl{position:relative;display:grid;gap:22px}
-    .vtl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--ring);transform:translateX(-50%)}
-    .vtl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-    .vtl-marker{position:absolute;left:50%;top:18px;width:14px;height:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 6px rgba(129,140,248,.18)}
-    .vtl-card{background:linear-gradient(180deg,var(--glass),transparent);border:1px solid var(--ring);border-radius:16px;padding:16px}
-    .vtl h3{margin:0 0 6px}
-    .vtl .periodo{font-size:12px;color:var(--muted);margin-bottom:8px}
-    /* Alternado: impares a la izquierda, pares a la derecha */
-    .vtl-item:nth-child(odd) .vtl-card:first-child{grid-column:1}
-    .vtl-item:nth-child(odd) .vtl-card:last-child{grid-column:2}
-    .vtl-item:nth-child(even) .vtl-card:first-child{grid-column:2}
-    .vtl-item:nth-child(even) .vtl-card:last-child{grid-column:1}
-    /* Mobile: columna única */
-    @media (max-width: 900px){
-      .vtl::before{left:20px}
-      .vtl-item{grid-template-columns:1fr}
-      .vtl-marker{left:20px}
-      .vtl-item .vtl-card{grid-column:1}
-    }
-  </style>
-  <section id="experiencia">
-    <div class="container">
-      <div class="section-title">
-        <h2>Experiencia</h2>
-        <p class="section-sub">Historia laboral basada en tu CV: desarrollo con .NET/Blazor, integración ZKTeco y soporte tecnológico.</p>
-      </div>
-      <div class="vtl">
-        <!-- 2023 — Actual | UTEPSA Asistente de Programación TI -->
-        <div class="vtl-item reveal">
-          <span class="vtl-marker" aria-hidden="true"></span>
-          <div class="vtl-card">
-            <h3>Asistente de Programación TI — UTEPSA</h3>
-            <div class="periodo">Sep 2023 — Actual</div>
-            <ul style="margin:0;padding-left:18px;color:var(--muted)">
-              <li>Aplicaciones con .NET y Blazor</li>
-              <li>Integración con dispositivos biométricos ZKTeco</li>
-              <li>Módulos de RRHH y Marketing</li>
-              <li>Consultas y administración en SQL Server</li>
-            </ul>
-          </div>
-          <div class="vtl-card">
-            <b>Stack</b>
-            <div class="chips" style="margin-top:8px">
-              <span class="chip">.NET</span><span class="chip">Blazor</span><span class="chip">SQL Server</span><span class="chip">ZKTeco</span>
+  <main id="contenido">
+    <section id="portada">
+      <div class="container">
+        <div class="hero">
+          <div class="hero-copy reveal">
+            <p class="kicker">Santa Cruz de la Sierra · Bolivia</p>
+            <h1>
+              <span class="word-design">Diseño</span>
+              <span class="word-dev">&lt;Desarrollo&gt;</span>
+            </h1>
+            <p class="lead">
+              Diseño y desarrollo sistemas empresariales — de la base de datos
+              a la interfaz — con una identidad visual propia.
+            </p>
+            <p class="lead-sub">
+              Desarrollador de software enfocado en aplicaciones .NET, SQL Server
+              y experiencias web que se sienten diseñadas, no ensambladas.
+            </p>
+            <div class="cta">
+              <a class="btn" href="#proyectos">Ver proyectos</a>
+              <a class="btn ghost" href="./paginas/cv.html">Descargar CV</a>
+              <a class="btn ghost" href="#contacto">Contactarme</a>
             </div>
           </div>
-        </div>
-        <!-- 2022 — 2023 | UTEPSA Auxiliar de Laboratorio de Sistemas -->
-        <div class="vtl-item reveal">
-          <span class="vtl-marker" aria-hidden="true"></span>
-          <div class="vtl-card">
-            <h3>Auxiliar de Laboratorio de Sistemas — UTEPSA</h3>
-            <div class="periodo">Feb 2022 — Ago 2023</div>
-            <ul style="margin:0;padding-left:18px;color:var(--muted)">
-              <li>Gestión de equipamiento tecnológico</li>
-              <li>Diseño gráfico y desarrollo web</li>
-              <li>Mantenimiento preventivo y correctivo</li>
-            </ul>
+
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="shard s1"></div>
+            <div class="shard s2"></div>
+            <div class="shard s3"></div>
+            <div class="shard s4"></div>
+            <div class="poster">
+              <img src="./assets/img/ilustraciones/portada.svg" alt="" />
+            </div>
+            <img class="avatar-float" src="./assets/img/retratos/avatar.png" alt="" />
           </div>
-          <div class="vtl-card">
-            <b>Enfoques</b>
-            <div class="chips" style="margin-top:8px">
-              <span class="chip">Soporte</span><span class="chip">Diseño</span><span class="chip">Web</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Colección</p>
+          <h2>Proyectos</h2>
+          <p class="section-sub">
+            Sistemas en producción, herramientas propias y colaboraciones.
+            Lo importante primero; el experimento, después.
+          </p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card reveal">
+            <a class="project-link" href="./paginas/casos/cae.html">
+              <div class="project-top">
+                <span class="project-num">01</span>
+                <span class="status done">Terminado</span>
+              </div>
+              <h3>CAE — Control de asistencia</h3>
+              <p class="project-type">Sistema empresarial · UTEPSA</p>
+              <p class="project-problem">
+                Las marcaciones biométricas existían; no se veían donde importaba.
+                Conecté dispositivos ZKTeco con pantallas en molinetes para
+                mostrar asistencia en tiempo real.
+              </p>
+              <div class="chips">
+                <span class="chip">.NET</span>
+                <span class="chip">SQL Server</span>
+                <span class="chip">ZKTeco</span>
+              </div>
+              <span class="project-cta">Ver caso de estudio →</span>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <a class="project-link" href="./paginas/casos/sisbombastic.html">
+              <div class="project-top">
+                <span class="project-num">02</span>
+                <span class="status done">Terminado</span>
+              </div>
+              <h3>SisBombastic</h3>
+              <p class="project-type">Sistema operativo y financiero · colaboración</p>
+              <p class="project-problem">
+                Colaboré en el análisis y desarrollo de un sistema para controlar
+                inventario, compras, ventas, caja y rentabilidad de un
+                emprendimiento de coleccionismo.
+              </p>
+              <div class="chips">
+                <span class="chip">.NET</span>
+                <span class="chip">SQL Server</span>
+                <span class="chip">Blazor</span>
+              </div>
+              <span class="project-cta">Ver caso de estudio →</span>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-num">03</span>
+              <span class="status done">Terminado</span>
+            </div>
+            <h3>Textilandia</h3>
+            <p class="project-type">Sistema empresarial y productivo</p>
+            <p class="project-problem">
+              Un negocio textil necesitaba dejar de operar a ciegas: producción,
+              stock y pedidos en un mismo flujo, no en planillas sueltas.
+            </p>
+            <div class="chips">
+              <span class="chip">.NET</span>
+              <span class="chip">SQL Server</span>
+              <span class="chip">C#</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-num">04</span>
+              <span class="status build">En desarrollo</span>
+            </div>
+            <h3>Diseñador visual de bases de datos</h3>
+            <p class="project-type">Herramienta creativa para modelado</p>
+            <p class="project-problem">
+              El modelo relacional suele vivir en diagramas estáticos. Estoy
+              construyendo una herramienta para diseñar, ver y entender
+              esquemas como si fueran un espacio, no una tabla.
+            </p>
+            <div class="chips">
+              <span class="chip">JavaScript</span>
+              <span class="chip">SQL</span>
+              <span class="chip">Canvas</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-num">05</span>
+              <span class="status done">Terminado</span>
+            </div>
+            <h3>Módulo de marketing educativo</h3>
+            <p class="project-type">CRM interno · UTEPSA</p>
+            <p class="project-problem">
+              Admisiones perdía el rastro de las oportunidades. Un módulo para
+              gestionar prospectos, seguimiento y reportes sobre Blazor y SQL Server.
+            </p>
+            <div class="chips">
+              <span class="chip">Blazor</span>
+              <span class="chip">.NET</span>
+              <span class="chip">SQL Server</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-num">06</span>
+              <span class="status concept">Concepto</span>
+            </div>
+            <h3>Dashboard empresarial</h3>
+            <p class="project-type">Visualización y análisis</p>
+            <p class="project-problem">
+              Los datos ya estaban en la base; faltaba una lectura clara para
+              decidir. Una capa de visualización para indicadores, no para
+              decorar pantallas.
+            </p>
+            <div class="chips">
+              <span class="chip">Blazor</span>
+              <span class="chip">SQL Server</span>
+              <span class="chip">Reportes</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="acerca">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-portrait reveal">
+            <img src="./assets/img/retratos/retrato.png" alt="Retrato de Fernando Santalla" />
+          </div>
+          <div class="about-copy reveal">
+            <p class="kicker">Sobre mí</p>
+            <h2>Lógica de sistemas, libertad de diseño.</h2>
+            <p>
+              Soy desarrollador de software y disfruto combinar el pensamiento
+              lógico de los sistemas con la libertad del diseño visual. Me interesa
+              construir soluciones funcionales, bien estructuradas y con una
+              identidad propia.
+            </p>
+            <p>
+              Egresado de Ingeniería de Sistemas. En UTEPSA desarrollo aplicaciones
+              .NET / Blazor, integro hardware biométrico y trabajo el modelo de
+              datos en SQL Server. También diseño piezas gráficas: esa no es una
+              segunda carrera, es el criterio con el que miro una interfaz.
+            </p>
+            <div class="xp">
+              <div class="xp-item">
+                <span class="xp-date">2023 — Actual</span>
+                <b>Asistente de Programación TI</b>
+                <span>UTEPSA · .NET, Blazor, SQL Server, ZKTeco</span>
+              </div>
+              <div class="xp-item">
+                <span class="xp-date">2022 — 2023</span>
+                <b>Auxiliar de Laboratorio de Sistemas</b>
+                <span>UTEPSA · soporte, web y diseño</span>
+              </div>
+              <div class="xp-item">
+                <span class="xp-date">2018</span>
+                <b>Analista Junior de Tecnología</b>
+                <span>Cetus Group SRL</span>
+              </div>
             </div>
           </div>
         </div>
-        <!-- 2020 | UTEPSA Aux CDT Educativo -->
-        <div class="vtl-item reveal">
-          <span class="vtl-marker" aria-hidden="true"></span>
-          <div class="vtl-card">
-            <h3>Auxiliar CDT Educativo — UTEPSA</h3>
-            <div class="periodo">Jun 2020 — Dic 2020</div>
-            <ul style="margin:0;padding-left:18px;color:var(--muted)">
-              <li>Atención al cliente y soporte en Moodle</li>
-              <li>Producción de multimedios y videos</li>
-            </ul>
-          </div>
-          <div class="vtl-card">
-            <b>Herramientas</b>
-            <div class="chips" style="margin-top:8px">
-              <span class="chip">Moodle</span><span class="chip">Edición de video</span>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Oficio</p>
+          <h2>Tecnologías</h2>
+          <p class="section-sub">Según dónde las uso, no según un porcentaje inventado.</p>
+        </div>
+        <div class="stack-grid">
+          <article class="stack-card reveal">
+            <h3>Trabajo principal</h3>
+            <p>C#, .NET, SQL Server</p>
+          </article>
+          <article class="stack-card reveal">
+            <h3>Aplicaciones web</h3>
+            <p>Blazor, HTML, CSS, JavaScript</p>
+          </article>
+          <article class="stack-card reveal">
+            <h3>Arquitectura</h3>
+            <p>Clean Architecture, APIs REST</p>
+          </article>
+          <article class="stack-card reveal">
+            <h3>Datos</h3>
+            <p>Diseño relacional, procedimientos almacenados, auditoría y reportes</p>
+          </article>
+          <article class="stack-card reveal">
+            <h3>Herramientas</h3>
+            <p>Git, GitHub, Cursor, Visual Studio</p>
+          </article>
+          <article class="stack-card reveal">
+            <h3>Diseño</h3>
+            <p>Illustrator, Photoshop, piezas publicitarias e interfaces</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Extra</p>
+          <h2>Laboratorio creativo</h2>
+          <p class="section-sub">
+            Aquí vive la parte artística: no tiene que ser un sistema completo
+            para merecer un lugar.
+          </p>
+        </div>
+        <div class="lab-grid">
+          <article class="lab-card lab-feature reveal">
+            <img src="./assets/img/ilustraciones/portada.svg" alt="Ilustración: laptop con formas de color y herramientas de diseño y código" />
+            <div class="lab-meta">
+              <span>Ilustración</span>
+              <h3>Diseño + desarrollo, en una imagen</h3>
+              <p>La pieza de portada: formas planas, trazo grueso, C# y JS saliendo de la pantalla.</p>
             </div>
-          </div>
-        </div>
-        <!-- 2020 | UTEPSA Aux Lab Sistemas I -->
-        <div class="vtl-item reveal">
-          <span class="vtl-marker" aria-hidden="true"></span>
-          <div class="vtl-card">
-            <h3>Auxiliar de Laboratorio de Sistemas — UTEPSA</h3>
-            <div class="periodo">Feb 2020 — Jun 2020</div>
-            <ul style="margin:0;padding-left:18px;color:var(--muted)">
-              <li>Gestión de equipamiento y mantenimiento</li>
-            </ul>
-          </div>
-          <div class="vtl-card">
-            <b>Soporte</b>
-            <div class="chips" style="margin-top:8px">
-              <span class="chip">Hardware</span><span class="chip">Sistemas</span>
+          </article>
+          <article class="lab-card reveal">
+            <div class="lab-swatch" style="--a:#ff0092;--b:#ba01ff"></div>
+            <div class="lab-meta">
+              <span>Identidad</span>
+              <h3>Marca personal</h3>
+              <p>Logo, avatar y paleta: magenta, lima, cian. Tipografía display y trazo negro.</p>
             </div>
-          </div>
-        </div>
-        <!-- 2018 | Cetus Group -->
-        <div class="vtl-item reveal">
-          <span class="vtl-marker" aria-hidden="true"></span>
-          <div class="vtl-card">
-            <h3>Analista Junior de Tecnología — Cetus Group SRL</h3>
-            <div class="periodo">Feb 2018 — Dic 2018</div>
-            <ul style="margin:0;padding-left:18px;color:var(--muted)">
-              <li>Inventario y montaje de equipamiento</li>
-              <li>Contenido audiovisual para redes</li>
-            </ul>
-          </div>
-          <div class="vtl-card">
-            <b>Áreas</b>
-            <div class="chips" style="margin-top:8px">
-              <span class="chip">Infraestructura</span><span class="chip">Audiovisual</span>
+          </article>
+          <article class="lab-card reveal">
+            <div class="lab-swatch" style="--a:#b6ff00;--b:#00b4fc"></div>
+            <div class="lab-meta">
+              <span>Gráfico</span>
+              <h3>Piezas publicitarias</h3>
+              <p>Campañas y materiales para el Laboratorio de Sistemas de UTEPSA y para Total Gym.</p>
             </div>
-          </div>
+          </article>
+          <article class="lab-card reveal">
+            <div class="lab-swatch" style="--a:#ffca1b;--b:#228dff"></div>
+            <div class="lab-meta">
+              <span>Interfaces</span>
+              <h3>Componentes y conceptos</h3>
+              <p>Rediseños, animaciones y piezas que todavía no son una aplicación.</p>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== Proyectos Destacados ===== -->
-  <section id="proyectos">
-    <div class="container">
-      <div class="section-title">
-        <h2>Proyectos destacados</h2>
-        <p class="section-sub">Una selección técnica y creativa.</p>
-      </div>
-      <div class="grid grid-3">
-        <article class="project reveal">
-          <div class="thumb"></div>
-          <div class="meta">
-            <h3>CAE – Control de Asistencia</h3>
-            <p style="color:var(--muted)">Captura en tiempo real de marcaciones y visualización en pantallas de molinetes.</p>
-            <div class="chips"><span class="chip">.NET</span><span class="chip">SQL Server</span><span class="chip">ZKTeco</span></div>
+    <section id="contacto">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <p class="kicker">Siguiente paso</p>
+          <h2>¿Hablamos?</h2>
+          <p class="section-sub contact-lead">
+            Si buscas a alguien que pueda diseñar el modelo, construir el sistema
+            y cuidar cómo se ve: escríbeme.
+          </p>
+          <div class="contact-grid">
+            <a class="contact-card" href="mailto:nandosantalla@gmail.com">
+              <span>Correo</span>
+              <b>nandosantalla@gmail.com</b>
+            </a>
+            <a class="contact-card" href="https://wa.me/59175331250" target="_blank" rel="noreferrer">
+              <span>WhatsApp</span>
+              <b>+591 753 31250</b>
+            </a>
+            <a class="contact-card" href="https://github.com/nan2antalla" target="_blank" rel="noreferrer">
+              <span>GitHub</span>
+              <b>nan2antalla</b>
+            </a>
+            <a class="contact-card"
+              href="https://www.linkedin.com/in/fernando-santalla-de-los-angeles-64ab5b233"
+              target="_blank" rel="noreferrer">
+              <span>LinkedIn</span>
+              <b>Fernando Santalla</b>
+            </a>
           </div>
-        </article>
-        <article class="project reveal">
-          <div class="thumb"></div>
-          <div class="meta">
-            <h3>Módulo de Marketing Educativo</h3>
-            <p style="color:var(--muted)">Gestión de oportunidades, seguimiento y reportes para admisiones.</p>
-            <div class="chips"><span class="chip">Blazor</span><span class="chip">.NET</span><span class="chip">SQL Server</span></div>
-          </div>
-        </article>
-        <article class="project reveal">
-          <div class="thumb"></div>
-          <div class="meta">
-            <h3>Aplicación Web Académica</h3>
-            <p style="color:var(--muted)">Registro de asistencia y evaluaciones con enfoque en UX.</p>
-            <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">Docker</span></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Diseño Gráfico ===== -->
-  <section id="diseno-grafico">
-    <div class="container">
-      <div class="section-title">
-        <h2>Diseño gráfico</h2>
-        <p class="section-sub">Branding, afiches y arte digital para campañas.</p>
-      </div>
-      <div class="split">
-        <div class="media-card reveal">
-          <img src="./design.jpg" alt="Mosaico de diseños" />
-          <div class="overlay"></div>
-          <div class="content">
-            <h3>Portafolio de Imágenes</h3>
-            <p style="color:#e5e7eb">Explora piezas para UTEPSA, Total Gym y más.</p>
-            <a class="btn" href="#" target="_blank" rel="noreferrer">Ver Portafolio</a>
-          </div>
-        </div>
-        <div class="card reveal">
-          <p style="color:var(--muted)">Dentro de mi eBook encontrarás trabajos relacionados con artes publicitarias: piezas para el Laboratorio de Sistemas de UTEPSA, materiales promocionales para Total Gym y otros proyectos personales. ¡Disfruta explorarlos!</p>
+          <p class="where">Santa Cruz de la Sierra, Bolivia</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== Diseño / Desarrollo Web ===== -->
-  <section id="diseno-web">
-    <div class="container">
-      <div class="section-title">
-        <h2>Desarrollo web</h2>
-        <p class="section-sub">Sistemas CRUD, formularios interactivos y páginas optimizadas.</p>
-      </div>
-      <div class="split">
-        <div class="card reveal">
-          <p style="color:var(--muted)">En mi portafolio técnico podrás explorar proyectos con foco en funcionalidad, UX y calidad de código. Incluyo sistemas CRUD, dashboards y microservicios cuando aplica.</p>
-        </div>
-        <div class="media-card reveal">
-          <img src="./pc.jpg" alt="Pantalla de computadora" />
-          <div class="overlay"></div>
-          <div class="content">
-            <h3>Portafolio de Páginas</h3>
-            <p style="color:#e5e7eb">Demos y prototipos navegables.</p>
-            <a class="btn" href="#" target="_blank" rel="noreferrer">Ver Portafolio</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Contacto ===== -->
-  <section id="contacto">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contacto</h2>
-        <p class="section-sub">¿Tienes un proyecto en mente? Conversemos.</p>
-      </div>
-      <div class="contact">
-        <div class="card reveal"><b>Correo</b><br/><a href="mailto:nandosantalla@gmail.com">nandosantalla@gmail.com</a></div>
-        <div class="card reveal"><b>WhatsApp</b><br/><a href="https://wa.me/59175331250" target="_blank" rel="noreferrer">+591 753 31250</a></div>
-        <div class="card reveal"><b>Ubicación</b><br/><span style="color:var(--muted)">Santa Cruz de la Sierra, Bolivia</span></div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <div class="container">© <span id="year"></span> Fernando Santalla — Desarrollador & Diseñador</div>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Fernando Santalla De los Ángeles</span>
+      <a href="#portada">Arriba</a>
+    </div>
   </footer>
 
-  <script>
-    // ===== Utilidades visuales =====
-    const $ = (s,sc=document)=>sc.querySelector(s); const $$=(s,sc=document)=>Array.from(sc.querySelectorAll(s));
-
-    // Año dinámico
-    $('#year').textContent = new Date().getFullYear();
-
-    // Menú móvil
-    const toggle = $('#menuToggle');
-    const links = $('#navLinks');
-    toggle?.addEventListener('click',()=>links.classList.toggle('open'));
-
-    // Scroll spy / enlace activo
-    const sections = ['portada','acerca','experiencia','proyectos','diseno-grafico','diseno-web','contacto'].map(id=>document.getElementById(id));
-    const navAnchors = $$('.nav-links a');
-    const spy = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          navAnchors.forEach(a=>a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
-        }
-      })
-    },{root:null,threshold:.4});
-    sections.forEach(s=>spy.observe(s));
-
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(({target,isIntersecting})=>{
-        if(isIntersecting){ target.classList.add('in-view'); io.unobserve(target); }
-      })
-    },{threshold:.2});
-    $$('.reveal').forEach(el=>io.observe(el));
-
-    // Parallax blobs
-    const blobs = $$('.blob');
-    window.addEventListener('scroll',()=>{
-      const y = window.scrollY;
-      blobs.forEach(b=>{
-        const f = Number(b.dataset.parallax||0);
-        b.style.transform = `translateY(${y * f / 100}px)`;
-      })
-    });
-
-    // Botón CV: reemplaza el # por tu URL de PDF
-    $('#btnCV').addEventListener('click',(e)=>{
-      const url = '#'; // TODO: poner link a tu PDF
-      if(url === '#'){ e.preventDefault(); alert('Agrega el enlace a tu CV en btnCV (index.html).'); }
-    });
-  </script>
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
