@@ -50,12 +50,12 @@
 
   const visual = document.querySelector('.hero-visual');
   if (visual && !reduce) {
-    visual.addEventListener('pointermove', (e) => {
-      const r = visual.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      visual.querySelectorAll('.shard').forEach((el, i) => {
-        const d = (i + 1) * 10;
+    const shards = visual.querySelectorAll('.shard');
+    window.addEventListener('pointermove', (e) => {
+      const x = e.clientX / window.innerWidth - 0.5;
+      const y = e.clientY / window.innerHeight - 0.5;
+      shards.forEach((el, i) => {
+        const d = (i + 1) * 14;
         el.style.transform = `translate(${x * d}px, ${y * d}px)`;
       });
     });

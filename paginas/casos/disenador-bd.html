@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diseñador visual de bases de datos · Fernando Santalla</title>
+  <meta name="description" content="Herramienta en desarrollo para diseñar y entender esquemas relacionales como un espacio, no como una tabla. JavaScript, SQL, Canvas." />
+  <link rel="icon" href="../../assets/img/marca/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="logo" href="../../index.html" aria-label="Inicio — Fernando Santalla">
+          <img src="../../assets/img/marca/logo.svg" alt="" width="40" height="40" />
+          <span class="name">
+            <b>Fernando Santalla</b>
+            <small>De los Ángeles</small>
+          </span>
+        </a>
+        <nav>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">☰</button>
+          <div class="nav-links" id="navLinks">
+            <a href="../../index.html#proyectos">Proyectos</a>
+            <a href="../../index.html#acerca">Sobre mí</a>
+            <a href="../../index.html#lab">Lab</a>
+            <a href="../../index.html#contacto">Contacto</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="case-page">
+    <div class="container">
+      <a class="back-link" href="../../index.html#proyectos">← Todos los proyectos</a>
+      <div class="case-hero">
+        <p class="kicker">Caso 04</p>
+        <h1>Diseñador visual de bases de datos</h1>
+        <p class="project-type">Herramienta creativa para modelado · En desarrollo</p>
+        <p class="lead">El modelo relacional suele vivir en un diagrama estático o en un script. Esta herramienta busca diseñarlo, verlo y entenderlo como un espacio.</p>
+        <div class="case-meta">
+          <span class="chip">JavaScript</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Canvas</span>
+        </div>
+      </div>
+
+      <article class="case-block">
+        <h2>Por qué existe</h2>
+        <p>Diseño bases todos los días. Las herramientas que lo hacen “bien” o son pesadas, o son una foto. Quiero un lienzo donde las tablas, las relaciones y el SQL se sientan parte del mismo gesto: mover, conectar, leer.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Qué estoy construyendo</h2>
+        <ul>
+          <li>Un espacio en canvas para colocar entidades y relaciones.</li>
+          <li>Una lectura del esquema que no sea solo el dibujo: que se pueda volver SQL.</li>
+          <li>Una interfaz que se sienta diseñada, no un editor de cajas genérico.</li>
+        </ul>
+      </article>
+
+      <article class="case-block">
+        <h2>Estado</h2>
+        <p>En desarrollo. Aún no hay una versión pública para enlazar. Cuando el lienzo se pueda mostrar sin pedir disculpas, este caso tendrá capturas y, si cabe, una demo.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Fernando Santalla De los Ángeles</span>
+      <a href="../../index.html#contacto">Contacto</a>
+    </div>
+  </footer>
+  <script src="../../assets/js/script.js"></script>
+</body>
+
+</html>

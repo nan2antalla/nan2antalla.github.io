@@ -162,14 +162,15 @@ nav {
 
 /* Hero */
 #portada {
-  padding: 48px 0 32px
+  padding: 48px 0 32px;
+  overflow-x: clip
 }
 
 .hero {
   min-height: calc(100vh - 120px);
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 40px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(24px, 4vw, 48px);
   align-items: center
 }
 
@@ -206,7 +207,7 @@ h1 {
 
 .lead {
   font-size: 1.15rem;
-  max-width: 38ch;
+  max-width: 28em;
   margin: 0 0 10px
 }
 
@@ -266,34 +267,45 @@ button:focus-visible {
 
 .hero-visual {
   position: relative;
-  min-height: 420px
+  min-height: 0;
+  width: min(100%, 520px);
+  justify-self: end;
+  padding: 12px 8px 8px 0
 }
 
 .poster {
   position: relative;
   z-index: 2;
-  border: 3px solid #000;
-  background: #005bc5;
-  overflow: hidden;
-  transform: rotate(-1.5deg)
+  background: transparent;
+  overflow: visible
 }
 
 .poster img {
   width: 100%;
+  height: auto;
   aspect-ratio: 1;
-  object-fit: cover
+  object-fit: contain;
+  background: transparent
 }
 
-.avatar-float {
+.cover-float {
   position: absolute;
   z-index: 3;
-  width: 132px;
-  height: 132px;
-  object-fit: cover;
+  width: clamp(92px, 22%, 132px);
+  aspect-ratio: 1;
+  overflow: hidden;
   border: 3px solid #000;
-  right: -8px;
-  bottom: 18px;
-  background: #000
+  right: 0;
+  bottom: 6%;
+  background: #005bc5
+}
+
+.cover-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+  transform-origin: center
 }
 
 .shard {
@@ -401,6 +413,20 @@ section {
   flex-direction: column;
   flex: 1;
   color: inherit
+}
+
+.project-media {
+  margin: -22px -22px 16px;
+  border-bottom: 2px solid var(--line);
+  overflow: hidden;
+  background: #000
+}
+
+.project-media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left
 }
 
 .project-top {
@@ -770,6 +796,54 @@ footer a:hover {
   padding-left: 18px
 }
 
+.case-shot-hero {
+  margin-top: 28px;
+  border: 2px solid var(--line);
+  background: #000;
+  overflow: hidden
+}
+
+.case-shot-hero img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left
+}
+
+.case-gallery-block {
+  max-width: none
+}
+
+.case-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px
+}
+
+.case-shot {
+  margin: 0;
+  border: 2px solid var(--line);
+  background: #000;
+  overflow: hidden
+}
+
+.case-shot img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left
+}
+
+.case-shot figcaption {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  border-top: 2px solid var(--line)
+}
+
 .back-link {
   display: inline-block;
   margin-bottom: 28px;
@@ -841,7 +915,8 @@ footer a:hover {
   .stack-grid,
   .lab-grid,
   .contact-grid,
-  .cv-grid {
+  .cv-grid,
+  .case-gallery {
     grid-template-columns: 1fr
   }
 
@@ -879,20 +954,70 @@ footer a:hover {
     display: flex
   }
 
-  .hero-visual {
+  .hero {
     min-height: 0;
-    max-width: 420px
+    gap: 28px;
+    padding-bottom: 8px
   }
 
-  .avatar-float {
-    width: 96px;
-    height: 96px
+  .hero-visual {
+    min-height: 0;
+    width: min(100%, 420px);
+    max-width: 420px;
+    justify-self: center;
+    padding: 8px 0 0
+  }
+
+  .cover-float {
+    width: clamp(80px, 24vw, 110px);
+    right: 4px;
+    bottom: 4%
+  }
+
+  .s1 {
+    width: 64px;
+    height: 64px;
+    left: 0
+  }
+
+  .s2 {
+    width: 52px;
+    height: 84px;
+    right: 0
+  }
+
+  .s3 {
+    width: 44px;
+    height: 44px;
+    left: 12px
+  }
+
+  .s4 {
+    width: 36px;
+    height: 36px
   }
 }
 
 @media (max-width: 600px) {
   h1 {
     font-size: clamp(34px, 12vw, 52px)
+  }
+
+  .lead {
+    max-width: none;
+    font-size: 1.05rem
+  }
+
+  .lead-sub {
+    max-width: 38ch
+  }
+
+  .cover-float {
+    width: clamp(72px, 26vw, 96px)
+  }
+
+  #portada {
+    padding: 28px 0 8px
   }
 
   section {
