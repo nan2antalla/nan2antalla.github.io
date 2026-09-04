@@ -421,6 +421,21 @@ section {
   object-position: top left
 }
 
+.project-media.is-console img,
+.case-shot-hero.is-console img {
+  object-position: center
+}
+
+.project-media.is-light,
+.case-shot-hero.is-light {
+  background: #f4f4f6
+}
+
+.project-media.is-light img,
+.case-shot-hero.is-light img {
+  object-position: top center
+}
+
 .project-top {
   display: flex;
   justify-content: space-between;
@@ -807,6 +822,13 @@ footer a:hover {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: top left
+}
+
+.case-shot-hero figcaption {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--muted);
+  border-top: 2px solid var(--line)
 }
 
 .case-gallery-block {
