@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visual Database Designer · Fernando Santalla</title>
+  <meta name="description" content="Caso de estudio: editor visual de esquemas relacionales en el navegador. Next.js, React Flow, import/export SQL e imagen." />
+  <link rel="icon" href="../../assets/img/marca/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="logo" href="../../index.html" aria-label="Inicio — Fernando Santalla">
+          <img src="../../assets/img/marca/logo.svg" alt="" width="40" height="40" />
+          <span class="name">
+            <b>Fernando Santalla</b>
+            <small>De los Ángeles</small>
+          </span>
+        </a>
+        <nav>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">☰</button>
+          <div class="nav-links" id="navLinks">
+            <a href="../../index.html#proyectos">Proyectos</a>
+            <a href="../../index.html#acerca">Sobre mí</a>
+            <a href="../../index.html#lab">Lab</a>
+            <a href="../../index.html#contacto">Contacto</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="case-page">
+    <div class="container">
+      <a class="back-link" href="../../index.html#proyectos">← Todos los proyectos</a>
+      <div class="case-hero">
+        <p class="kicker">Caso 01</p>
+        <h1>Visual Database Designer</h1>
+        <p class="project-type">Editor visual · en el navegador · En línea</p>
+        <p class="lead">Editor visual de bases de datos relacionales: modelas el esquema en un lienzo, agrupas por unidad de negocio y exportas SQL, JSON o una imagen del diagrama.</p>
+        <div class="case-meta">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">React Flow</span>
+          <span class="chip">Zustand</span>
+          <span class="chip">Tailwind</span>
+        </div>
+        <div class="case-actions">
+          <a class="btn" href="https://visual-database-designer.vercel.app" target="_blank" rel="noreferrer">Usar el editor</a>
+          <a class="btn ghost" href="https://github.com/nan2antalla/visual-database-designer" target="_blank" rel="noreferrer">Ver código</a>
+        </div>
+      </div>
+
+      <article class="case-block">
+        <h2>Contexto</h2>
+        <p>Diseñar un esquema relacional suele empezar en un editor de texto o en un diagrama estático. Ni el SQL suelto ni una captura sirven para iterar con un equipo. Hacía falta una herramienta que viva en el navegador, sin backend, y que el modelo se pueda ver, editar y exportar.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Problema</h2>
+        <p>Pasar de “tengo el modelo en la cabeza / en un SQL suelto” a un diagrama editable, compartible y exportable. Útil para documentar, explicar a un equipo o partir de un script existente.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Mi participación</h2>
+        <p>Diseño e implementación de extremo a extremo: el dominio del esquema, los comandos con historial, el lienzo, importación y exportación, y pruebas unitarias y E2E.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Qué hace</h2>
+        <ul>
+          <li>Tablas, columnas, PK, nulos, tipos y color en un lienzo infinito.</li>
+          <li>Relaciones 1:1, 1:N y N:M: arrastras entre campos; las líneas se enrutan solas y, si se cruzan, una pasa por un puente gráfico.</li>
+          <li>Contenedores por dominio, panel de capas e inspector de propiedades.</li>
+          <li>Importar SQL (CREATE TABLE y FK) y JSON; exportar JSON, SQL (PostgreSQL, MySQL, SQL Server, Oracle) y PNG/SVG.</li>
+          <li>Deshacer/rehacer, atajos, tutorial por pasos y temas visuales.</li>
+          <li>Autoguardado en el navegador. No hay servidor ni cuenta.</li>
+        </ul>
+      </article>
+
+      <article class="case-block">
+        <h2>Arquitectura</h2>
+        <p>Next.js + React en el cliente. React Flow para el lienzo, Zustand para el estado, un historial de comandos para deshacer. Vitest cubre el dominio; Playwright, los flujos de punta a punta. La persistencia es localStorage: el diagrama no sale del navegador hasta que lo exportas.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Resultado</h2>
+        <p>Una app pública que se puede abrir y usar ahora. El reclutador no tiene que clonar el repo para entender el producto: entra, crea una tabla, tira una FK y exporta el SQL.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Aprendizajes</h2>
+        <p>El lienzo no perdona un modelo de datos flojo: si el comando no es reversible, el deshacer se rompe. El enrutado de aristas y los puentes importan más de lo que parece: son la diferencia entre un diagrama legible y un ovillo. A futuro: compartir un esquema por enlace y más dialectos si el uso lo pide.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Fernando Santalla De los Ángeles</span>
+      <a href="../../index.html#contacto">Contacto</a>
+    </div>
+  </footer>
+  <script src="../../assets/js/script.js"></script>
+</body>
+
+</html>
