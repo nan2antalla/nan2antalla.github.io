@@ -551,15 +551,18 @@ section {
 }
 
 .about-portrait {
-  border: 3px solid #000;
-  overflow: hidden;
-  background: #000
+  overflow: visible;
+  background: transparent;
+  justify-self: center;
+  width: min(100%, 420px)
 }
 
 .about-portrait img {
   width: 100%;
+  height: auto;
   aspect-ratio: 1;
-  object-fit: cover
+  object-fit: contain;
+  background: transparent
 }
 
 .about-copy p {
