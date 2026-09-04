@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Textilandia · Fernando Santalla</title>
+  <meta name="description" content="Caso de estudio: sistema empresarial y productivo para un negocio textil. Producción, stock y pedidos en un mismo flujo. .NET y SQL Server." />
+  <link rel="icon" href="../../assets/img/marca/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="logo" href="../../index.html" aria-label="Inicio — Fernando Santalla">
+          <img src="../../assets/img/marca/logo.svg" alt="" width="40" height="40" />
+          <span class="name">
+            <b>Fernando Santalla</b>
+            <small>De los Ángeles</small>
+          </span>
+        </a>
+        <nav>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">☰</button>
+          <div class="nav-links" id="navLinks">
+            <a href="../../index.html#proyectos">Proyectos</a>
+            <a href="../../index.html#acerca">Sobre mí</a>
+            <a href="../../index.html#lab">Lab</a>
+            <a href="../../index.html#contacto">Contacto</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="case-page">
+    <div class="container">
+      <a class="back-link" href="../../index.html#proyectos">← Todos los proyectos</a>
+      <div class="case-hero">
+        <p class="kicker">Caso 03</p>
+        <h1>Textilandia</h1>
+        <p class="project-type">Sistema empresarial y productivo · Terminado</p>
+        <p class="lead">Un negocio textil no puede tener la producción en una planilla, el stock en otra y los pedidos en la cabeza de alguien. Hacía falta un solo flujo.</p>
+        <div class="case-meta">
+          <span class="chip">.NET</span>
+          <span class="chip">C#</span>
+          <span class="chip">SQL Server</span>
+        </div>
+      </div>
+
+      <article class="case-block">
+        <h2>Contexto</h2>
+        <p>Textilandia opera producción textil: materiales, pedidos y stock que cambian en el mismo día. El oficio ya existía. Lo que no existía era un sistema que uniera esas piezas sin pedirle al operador que reconstruya el estado a mano.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Problema</h2>
+        <p>Cuando producción, inventario y pedidos viven en islas, se fabrica a ciegas: se promete lo que no hay, se compra de más o se pierde el rastro de un pedido. El costo no es solo desorden; es decidir tarde.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Mi participación</h2>
+        <p>Participé en el desarrollo de un sistema empresarial .NET / SQL Server para sostener el flujo productivo: de lo que entra a lo que se entrega, con el stock como resultado de ese movimiento, no como una lista que se edita a parte.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Proceso</h2>
+        <ul>
+          <li>Entender el ciclo del taller: pedido, producción, stock, entrega.</li>
+          <li>Modelar en SQL Server las entidades que el negocio ya usa, no las que un ERP genérico impone.</li>
+          <li>Construir la aplicación en C# / .NET sobre ese modelo.</li>
+          <li>Priorizar las pantallas del día a día por encima de reportes decorativos.</li>
+        </ul>
+      </article>
+
+      <article class="case-block">
+        <h2>Arquitectura y datos</h2>
+        <p>SQL Server como fuente de verdad. La aplicación .NET cubre la operación. Producción, stock y pedidos se leen del mismo modelo: un movimiento en un módulo tiene que verse en los otros, o el sistema miente.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Resultado</h2>
+        <p>El negocio dejó de operar el ciclo en planillas sueltas. Hay un sistema donde producción, stock y pedidos conviven. El valor está en haber traducido un taller a un flujo que se puede consultar, no reconstruir.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Aprendizajes</h2>
+        <p>En un negocio productivo el usuario no es un analista: si la pantalla no sigue el orden del taller, no se usa. El modelo de datos vale más que agregar campos. Este caso se puede enriquecer con capturas y con el detalle de cada módulo cuando estén listos.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Fernando Santalla De los Ángeles</span>
+      <a href="../../index.html#contacto">Contacto</a>
+    </div>
+  </footer>
+  <script src="../../assets/js/script.js"></script>
+</body>
+
+</html>

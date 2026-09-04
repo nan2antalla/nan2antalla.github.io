@@ -406,6 +406,20 @@ section {
   color: inherit
 }
 
+.project-media {
+  margin: -22px -22px 16px;
+  border-bottom: 2px solid var(--line);
+  overflow: hidden;
+  background: #000
+}
+
+.project-media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left
+}
+
 .project-top {
   display: flex;
   justify-content: space-between;
@@ -750,6 +764,54 @@ footer a:hover {
   padding-left: 18px
 }
 
+.case-shot-hero {
+  margin-top: 28px;
+  border: 2px solid var(--line);
+  background: #000;
+  overflow: hidden
+}
+
+.case-shot-hero img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left
+}
+
+.case-gallery-block {
+  max-width: none
+}
+
+.case-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px
+}
+
+.case-shot {
+  margin: 0;
+  border: 2px solid var(--line);
+  background: #000;
+  overflow: hidden
+}
+
+.case-shot img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left
+}
+
+.case-shot figcaption {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  border-top: 2px solid var(--line)
+}
+
 .back-link {
   display: inline-block;
   margin-bottom: 28px;
@@ -821,7 +883,8 @@ footer a:hover {
   .stack-grid,
   .lab-grid,
   .contact-grid,
-  .cv-grid {
+  .cv-grid,
+  .case-gallery {
     grid-template-columns: 1fr
   }
 

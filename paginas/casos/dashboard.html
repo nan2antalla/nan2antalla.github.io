@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard empresarial · Fernando Santalla</title>
+  <meta name="description" content="Concepto de capa de visualización para indicadores empresariales sobre Blazor y SQL Server." />
+  <link rel="icon" href="../../assets/img/marca/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="logo" href="../../index.html" aria-label="Inicio — Fernando Santalla">
+          <img src="../../assets/img/marca/logo.svg" alt="" width="40" height="40" />
+          <span class="name">
+            <b>Fernando Santalla</b>
+            <small>De los Ángeles</small>
+          </span>
+        </a>
+        <nav>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">☰</button>
+          <div class="nav-links" id="navLinks">
+            <a href="../../index.html#proyectos">Proyectos</a>
+            <a href="../../index.html#acerca">Sobre mí</a>
+            <a href="../../index.html#lab">Lab</a>
+            <a href="../../index.html#contacto">Contacto</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="case-page">
+    <div class="container">
+      <a class="back-link" href="../../index.html#proyectos">← Todos los proyectos</a>
+      <div class="case-hero">
+        <p class="kicker">Caso 06</p>
+        <h1>Dashboard empresarial</h1>
+        <p class="project-type">Visualización y análisis · Concepto</p>
+        <p class="lead">Los datos ya estaban en la base. Faltaba una lectura para decidir: indicadores, no pantallas decoradas.</p>
+        <div class="case-meta">
+          <span class="chip">Blazor</span>
+          <span class="chip">SQL Server</span>
+          <span class="chip">Reportes</span>
+        </div>
+      </div>
+
+      <article class="case-block">
+        <h2>La idea</h2>
+        <p>Una capa de visualización sobre el modelo que ya existe. El dashboard no crea una verdad nueva: ordena la que ya se captura en la operación —ventas, stock, asistencia, embudo— para que se lea en una pasada.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Qué resolvería</h2>
+        <ul>
+          <li>Dejar de exportar a Excel para “ver cómo vamos”.</li>
+          <li>Indicadores con el mismo criterio que el sistema operativo, no un número suelto.</li>
+          <li>Una interfaz que se entiende a distancia: el número, la variación, la pregunta que responde.</li>
+        </ul>
+      </article>
+
+      <article class="case-block">
+        <h2>Estado</h2>
+        <p>Concepto. Parte de esta lectura ya aparece en sistemas en producción —por ejemplo el dashboard de decisiones de SisBombastic—. Este caso queda como la línea de trabajo: visualización al servicio de la decisión, no al revés.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Fernando Santalla De los Ángeles</span>
+      <a href="../../index.html#contacto">Contacto</a>
+    </div>
+  </footer>
+  <script src="../../assets/js/script.js"></script>
+</body>
+
+</html>

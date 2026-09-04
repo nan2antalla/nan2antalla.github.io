@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CAE — Control de asistencia · Fernando Santalla</title>
-  <meta name="description" content="Caso de estudio: sistema de control de asistencia en tiempo real con .NET, SQL Server y dispositivos ZKTeco. UTEPSA." />
+  <meta name="description" content="Caso de estudio: sincronización de más de 20 biométricos ZKTeco con .NET y SQL Server. Carga asíncrona de tarjetas de estudiantes en UTEPSA." />
   <link rel="icon" href="../../assets/img/marca/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,53 +44,54 @@
         <p class="kicker">Caso 01</p>
         <h1>CAE — Control de asistencia</h1>
         <p class="project-type">Sistema empresarial · UTEPSA · Terminado</p>
-        <p class="lead">Las marcaciones biométricas ya se registraban. El problema era que nadie las veía en el momento y en el lugar donde importaban: la entrada.</p>
+        <p class="lead">Más de veinte biométricos no pueden tener cada uno su propia lista. CAE habla con todos por el SDK de ZKTeco, carga las tarjetas de los estudiantes y deja en cada dispositivo solo a quien está en lista blanca.</p>
         <div class="case-meta">
           <span class="chip">.NET</span>
           <span class="chip">C#</span>
+          <span class="chip">ZKTeco SDK</span>
           <span class="chip">SQL Server</span>
-          <span class="chip">ZKTeco</span>
         </div>
       </div>
 
       <article class="case-block">
         <h2>Contexto</h2>
-        <p>En UTEPSA el control de asistencia depende de dispositivos biométricos ZKTeco en molinetes. El dato existía en el hardware y, en parte, en base de datos. Lo que no existía era una lectura inmediata para quien entra, para seguridad y para operación del campus.</p>
+        <p>En UTEPSA el acceso depende de dispositivos biométricos ZKTeco. Los usuarios son estudiantes y cada uno se identifica con tarjeta. Si un lector no tiene al alumno cargado —o todavía tiene a alguien que ya no debería entrar— el hardware no sirve, aunque la base institucional esté al día.</p>
       </article>
 
       <article class="case-block">
         <h2>Problema</h2>
-        <p>Sin una capa de visualización en tiempo real, la marcación era un evento opaco: se tocaba el lector y el resto quedaba en un log. Eso genera filas, dudas (“¿me marcó?”) y un hueco entre el dispositivo físico y el sistema institucional.</p>
+        <p>Había que intercomunicar más de 20 biométricos y mantener en todos la misma población: añadir a quien está en lista blanca y borrar a quien no. Hacerlo a mano, dispositivo por dispositivo, no escala. Hacerlo en horario de clase tampoco: una carga larga bloquea el acceso.</p>
       </article>
 
       <article class="case-block">
         <h2>Mi participación</h2>
-        <p>Como asistente de programación TI participé en el desarrollo de la captura, la persistencia y la pantalla que se muestra en los molinetes. El trabajo cruza hardware, base de datos y una interfaz que tiene que leerse a distancia, no en un monitor de escritorio.</p>
+        <p>Como asistente de programación TI desarrollé la comunicación con el DLL de ZKTeco, la carga asíncrona de usuarios hacia los dispositivos y la ventana tipo consola desde la que se ve el proceso. El trabajo está entre el SDK, la lista blanca y el hardware real de campus.</p>
       </article>
 
       <article class="case-block">
         <h2>Proceso</h2>
         <ul>
-          <li>Entender el flujo real en portería: persona, dispositivo, molinete, pantalla.</li>
-          <li>Integrar el SDK / protocolo de ZKTeco para obtener la marcación cuando ocurre.</li>
-          <li>Guardar y consultar en SQL Server sin bloquear la lectura en vivo.</li>
-          <li>Diseñar una vista de alto contraste, tipografía grande y estado claro (ok / error / espera).</li>
+          <li>Integrar el DLL de ZKTeco para registrar y sincronizar tarjetas de estudiantes.</li>
+          <li>Hablar con más de 20 biométricos desde un solo proceso, sin tratarlos como islas.</li>
+          <li>Cargar usuarios de forma asíncrona para no trabar la corrida si un lector tarda o falla.</li>
+          <li>Programar la actualización cada noche: elimina a quien no está en lista blanca y añade a quien sí.</li>
+          <li>Exponer el avance en una ventana tipo consola: se ve qué dispositivo responde y qué se está cargando.</li>
         </ul>
       </article>
 
       <article class="case-block">
         <h2>Arquitectura y datos</h2>
-        <p>Dispositivo biométrico → servicio .NET que recibe el evento → SQL Server como fuente de verdad → aplicación de visualización en las pantallas del acceso. El modelo de datos cubre persona, marcación, dispositivo y el estado que la pantalla necesita pintar en el segundo siguiente.</p>
+        <p>Lista blanca (quién debe existir en los lectores) → aplicación .NET que usa el DLL de ZKTeco → más de 20 dispositivos en paralelo. La corrida nocturna es el momento de verdad: cada biométrico termina alineado con la lista, no con el estado que tenía ayer. SQL Server sostiene el universo de estudiantes; el hardware solo guarda lo que esa lista autoriza.</p>
       </article>
 
       <article class="case-block">
         <h2>Resultado</h2>
-        <p>La asistencia dejó de ser solo un registro posterior. En el molinete se ve la marcación en el momento. Para la universidad eso significa menos fricción en el acceso y un puente real entre el hardware de control y el sistema interno.</p>
+        <p>Los lectores dejan de divergir. Un estudiante nuevo aparece en los biométricos después de la carga; quien ya no corresponde, desaparece. La operación se ve en consola, no en un tablero decorativo. Para la universidad eso es control de acceso real: la tarjeta funciona donde tiene que funcionar, en todos los puntos a la vez.</p>
       </article>
 
       <article class="case-block">
         <h2>Aprendizajes</h2>
-        <p>Integrar hardware obliga a diseñar para el fallo: red caída, dedo mal puesto, dispositivo desfasado. La interfaz no es un dashboard: es una señal. Si no se entiende en un segundo, no sirve. A futuro: más telemetría de dispositivos y una vista de operación para quien administra los accesos, no solo para quien pasa.</p>
+        <p>Con hardware, el fallo es el caso normal: un lector caído no puede frenar a los otros veinte. Por eso la carga es asíncrona y la consola importa: si no se ve el error, no se arregla. El horario nocturno no es un detalle: es la única ventana en la que se puede reescribir la población de los dispositivos sin pelear con el flujo del día.</p>
       </article>
     </div>
   </main>

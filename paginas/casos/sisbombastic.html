@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SisBombastic · Fernando Santalla</title>
-  <meta name="description" content="Caso de estudio: colaboración en un sistema de inventario, compras, ventas, caja y rentabilidad para un emprendimiento de coleccionismo." />
+  <meta name="description" content="Caso de estudio: sistema de inventario, compras y ventas con análisis de negocio y rentabilidad. .NET, Blazor, SQL Server." />
   <link rel="icon" href="../../assets/img/marca/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,8 +43,8 @@
       <div class="case-hero">
         <p class="kicker">Caso 02</p>
         <h1>SisBombastic</h1>
-        <p class="project-type">Sistema operativo y financiero · colaboración · Terminado</p>
-        <p class="lead">Un emprendimiento de coleccionismo no puede adivinar si gana o pierde. Hacía falta un sistema que uniera inventario, compras, ventas, caja y rentabilidad.</p>
+        <p class="project-type">Inventario, ventas, compras y rentabilidad · colaboración · Terminado</p>
+        <p class="lead">Un sistema de inventario, compra y venta con análisis de negocio: para saber qué entra, qué se vende y qué deja margen — no para adivinarlo al cierre del mes.</p>
         <div class="case-meta">
           <span class="chip">.NET</span>
           <span class="chip">Blazor</span>
@@ -53,44 +53,76 @@
         </div>
       </div>
 
+      <figure class="case-shot-hero">
+        <img src="../../assets/img/proyectos/sisbombastic/portada/01-dashboard.png" alt="Dashboard de decisiones de SisBombastic: métricas de ventas, utilidad y capital en inventario" />
+      </figure>
+
       <article class="case-block">
         <h2>Contexto</h2>
-        <p>Bombastic Dreamers opera un negocio de coleccionismo: muchas SKU, compras irregulares, ventas por canal y una caja que no perdona el desorden. El día a día se sostenía con control manual. Colaboré en el análisis y el desarrollo del sistema; no soy el dueño del negocio.</p>
+        <p>Bombastic Dreamers opera un negocio de coleccionismo: cajas, autos y accesorios, compras irregulares, ventas por canal (incluido TikTok Live) y una caja que no perdona el desorden. Colaboré en el análisis y el desarrollo del sistema; no soy el dueño del negocio.</p>
       </article>
 
       <article class="case-block">
         <h2>Problema</h2>
-        <p>Sin un modelo único, el inventario, las compras y las ventas viven en islas. Eso oculta el costo real de cada pieza, retrasa el cuadre de caja y hace imposible hablar de rentabilidad con números, no con sensación.</p>
+        <p>Sin un modelo único, el inventario, las compras y las ventas viven en islas. Eso oculta el costo de cada pieza, retrasa el cuadre de caja y hace imposible hablar de rentabilidad con números. El análisis de negocio no puede ser una hoja aparte: tiene que salir del mismo flujo que opera el día.</p>
       </article>
 
       <article class="case-block">
         <h2>Mi participación</h2>
-        <p>Participé en el análisis del flujo del negocio y en el desarrollo de los módulos que lo sostienen: inventario, compras, ventas, caja y una lectura de rentabilidad. El criterio fue el mismo que en un sistema institucional: el dato se captura una vez y se reutiliza en cada vista.</p>
+        <p>Participé en el análisis del flujo y en el desarrollo de los módulos que lo sostienen: inventario, compras, ventas, caja y la lectura de rentabilidad. El criterio: el dato se captura una vez —al comprar, al vender, al mover caja— y se reutiliza en cada vista, incluido el dashboard de decisiones.</p>
       </article>
 
       <article class="case-block">
         <h2>Proceso</h2>
         <ul>
           <li>Mapear cómo entra un producto, cómo se vende y cómo se cierra el día.</li>
-          <li>Diseñar el modelo relacional alrededor de producto, movimiento, comprobante y caja.</li>
-          <li>Construir la aplicación en el stack .NET / Blazor / SQL Server.</li>
-          <li>Priorizar las pantallas que el negocio usa todos los días, no un panel decorativo.</li>
+          <li>Inventario de stock (cajas, autos, accesorios) con costo, precio y estado.</li>
+          <li>Compras ligadas a proveedor, recepción y forma de pago —incluida reinversión de caja.</li>
+          <li>Ventas que descuentan inventario al registrar y calculan utilidad por operación.</li>
+          <li>Caja / banco: de dónde salió o entró el dinero, y cuánto debería haber.</li>
+          <li>Análisis de negocio: dashboard para decidir qué comprar, qué vende y qué genera margen.</li>
         </ul>
+      </article>
+
+      <article class="case-block case-gallery-block">
+        <h2>Pantallas</h2>
+        <div class="case-gallery">
+          <figure class="case-shot">
+            <img src="../../assets/img/proyectos/sisbombastic/inventario/02-inventario.png" alt="Módulo de inventario: listado de stock con estado, ubicación y precio sugerido" />
+            <figcaption>Inventario — stock, estado y ubicación</figcaption>
+          </figure>
+          <figure class="case-shot">
+            <img src="../../assets/img/proyectos/sisbombastic/compras/03-compras.png" alt="Módulo de compras: registro de compras con proveedor, estado recibido o en camino" />
+            <figcaption>Compras — de pedido a recepción</figcaption>
+          </figure>
+          <figure class="case-shot">
+            <img src="../../assets/img/proyectos/sisbombastic/ventas/04-ventas.png" alt="Módulo de ventas: listado de ventas con utilidad, canal y estado de pago" />
+            <figcaption>Ventas — descuenta stock y calcula utilidad</figcaption>
+          </figure>
+          <figure class="case-shot">
+            <img src="../../assets/img/proyectos/sisbombastic/caja/05-caja.png" alt="Módulo de caja y banco: dinero esperado y movimientos del día" />
+            <figcaption>Caja / banco — de dónde salió o entró</figcaption>
+          </figure>
+          <figure class="case-shot">
+            <img src="../../assets/img/proyectos/sisbombastic/rentabilidad/06-graficos.png" alt="Gráficos del dashboard: mes contra mes anterior y evolución de ventas y utilidad" />
+            <figcaption>Rentabilidad — mes contra mes y tendencia</figcaption>
+          </figure>
+        </div>
       </article>
 
       <article class="case-block">
         <h2>Arquitectura y datos</h2>
-        <p>SQL Server como núcleo. La aplicación Blazor cubre operación diaria. El inventario no es una lista: es el resultado de compras, ventas y ajustes. La rentabilidad sale de cruzar costo, precio y movimiento, no de una celda suelta en una hoja de cálculo.</p>
+        <p>SQL Server como núcleo. Blazor para la operación diaria. El inventario no es una lista suelta: es el resultado de compras, ventas y ajustes. La rentabilidad sale de cruzar costo, precio y movimiento. El dashboard no inventa indicadores: los lee del mismo modelo que usa quien abre y cierra la tienda.</p>
       </article>
 
       <article class="case-block">
         <h2>Resultado</h2>
-        <p>El negocio pasó de operar a ciegas a tener un sistema que registra el ciclo completo. Inventario, caja y margen dejan de ser conversaciones aparte. Para mí, el valor está en haber traducido un oficio (coleccionismo) a un modelo que un operador puede usar sin ser programador.</p>
+        <p>El negocio registra el ciclo completo: compra, stock, venta, caja y margen. Se puede decidir con el dashboard —qué reponer, qué se estanca, qué deja plata— en lugar de esperar una planilla de fin de mes. Para mí el valor está en haber traducido un oficio (coleccionismo) a un sistema que un operador usa sin ser programador.</p>
       </article>
 
       <article class="case-block">
         <h2>Aprendizajes</h2>
-        <p>En un emprendimiento el usuario es quien abre y cierra la tienda: si el flujo tiene un paso de más, no se usa. El análisis previo vale más que agregar pantallas. A futuro: reportes más finos por línea de producto y una auditoría más explícita de cada movimiento de caja.</p>
+        <p>En un emprendimiento el usuario es quien abre y cierra la tienda: si el flujo tiene un paso de más, no se usa. El análisis de negocio solo sirve si nace de la operación, no si se agrega después como un reporte. A futuro: cortes más finos por línea de producto y una auditoría más explícita de cada movimiento de caja.</p>
       </article>
     </div>
   </main>
