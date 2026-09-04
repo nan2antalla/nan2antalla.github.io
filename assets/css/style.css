@@ -396,16 +396,8 @@ section {
 }
 
 .project-card:has(.project-link):hover,
-.project-card.featured:hover {
+.project-card:has(.project-actions):hover {
   border-color: var(--magenta)
-}
-
-.project-card.featured {
-  grid-column: 1 / -1
-}
-
-.project-card.featured .project-problem {
-  max-width: 68ch
 }
 
 .project-link {
@@ -513,13 +505,19 @@ section {
 .project-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 16px
 }
 
 .project-actions .btn {
   font-size: 13px;
   padding: 10px 14px
+}
+
+.project-actions .project-cta {
+  margin-top: 0
 }
 
 .case-actions {
