@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CAE — Control de asistencia · Fernando Santalla</title>
-  <meta name="description" content="Caso de estudio: sincronización de más de 20 biométricos ZKTeco con .NET y SQL Server. Carga asíncrona de tarjetas de estudiantes en UTEPSA." />
+  <meta name="description" content="Caso de estudio: carga masiva de tarjetas en biométricos ZKTeco por DLL y API, y pantalla de molinete con foto. UTEPSA." />
   <link rel="icon" href="../../assets/img/marca/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,12 +44,12 @@
         <p class="kicker">Caso 02</p>
         <h1>CAE — Control de asistencia</h1>
         <p class="project-type">Sistema empresarial · UTEPSA · Terminado</p>
-        <p class="lead">Más de veinte biométricos no pueden tener cada uno su propia lista. CAE habla con todos por el SDK de ZKTeco, carga las tarjetas de los estudiantes y deja en cada dispositivo solo a quien está en lista blanca.</p>
+        <p class="lead">Carga masiva de tarjetas de estudiantes a los biométricos ZKTeco: primero por el DLL, después por la API. En el molinete, una pantalla muestra la foto de quien entra y de quien sale.</p>
         <div class="case-meta">
-          <span class="chip">.NET</span>
           <span class="chip">C#</span>
-          <span class="chip">ZKTeco SDK</span>
-          <span class="chip">SQL Server</span>
+          <span class="chip">.NET</span>
+          <span class="chip">ZKTeco DLL</span>
+          <span class="chip">ZKTeco API</span>
         </div>
       </div>
 
@@ -60,43 +60,44 @@
 
       <article class="case-block">
         <h2>Contexto</h2>
-        <p>En UTEPSA el acceso depende de dispositivos biométricos ZKTeco. Los usuarios son estudiantes y cada uno se identifica con tarjeta. Si un lector no tiene al alumno cargado —o todavía tiene a alguien que ya no debería entrar— el hardware no sirve, aunque la base institucional esté al día.</p>
+        <p>En UTEPSA el acceso depende de biométricos ZKTeco. Los estudiantes se identifican con tarjeta. Si el lector no tiene al alumno —o todavía tiene a alguien que ya no debería entrar— el hardware no sirve. En portería tampoco basta el beep: hay que ver de quién se trata.</p>
       </article>
 
       <article class="case-block">
         <h2>Problema</h2>
-        <p>Había que intercomunicar más de 20 biométricos y mantener en todos la misma población: añadir a quien está en lista blanca y borrar a quien no. Hacerlo a mano, dispositivo por dispositivo, no escala. Hacerlo en horario de clase tampoco: una carga larga bloquea el acceso.</p>
+        <p>Había que actualizar muchos dispositivos a la vez y cargar tarjetas en masa. Hacerlo a mano no escala. Además hacía falta una vía por DLL y otra por API, según el dispositivo. En el molinete, el evento de entrada o salida tenía que verse: la foto, no un log.</p>
       </article>
 
       <article class="case-block">
         <h2>Mi participación</h2>
-        <p>Como asistente de programación TI desarrollé la comunicación con el DLL de ZKTeco, la carga asíncrona de usuarios hacia los dispositivos y la ventana tipo consola desde la que se ve el proceso. El trabajo está entre el SDK, la lista blanca y el hardware real de campus.</p>
+        <p>Como asistente de programación TI desarrollé la actualización masiva de dispositivos ZKTeco: una vía por el DLL y otra por la API, para la carga de tarjetas de estudiantes. También la pantalla del molinete que muestra la foto al ingresar y al salir. El trabajo está entre el hardware, la lista de usuarios y una interfaz que se lee a distancia.</p>
       </article>
 
       <article class="case-block">
         <h2>Proceso</h2>
         <ul>
-          <li>Integrar el DLL de ZKTeco para registrar y sincronizar tarjetas de estudiantes.</li>
-          <li>Hablar con más de 20 biométricos desde un solo proceso, sin tratarlos como islas.</li>
+          <li>Integrar el DLL de ZKTeco para actualizar de forma masiva los biométricos.</li>
+          <li>Añadir una segunda vía por la API de ZKTeco para la misma carga de tarjetas.</li>
           <li>Cargar usuarios de forma asíncrona para no trabar la corrida si un lector tarda o falla.</li>
-          <li>Programar la actualización cada noche: elimina a quien no está en lista blanca y añade a quien sí.</li>
-          <li>Exponer el avance en una ventana tipo consola: se ve qué dispositivo responde y qué se está cargando.</li>
+          <li>Mantener lista blanca: elimina a quien no corresponde y añade a quien sí.</li>
+          <li>Exponer el avance en una ventana tipo consola.</li>
+          <li>Pantalla de molinete: foto de la persona en el ingreso y en la salida.</li>
         </ul>
       </article>
 
       <article class="case-block">
         <h2>Arquitectura y datos</h2>
-        <p>Lista blanca (quién debe existir en los lectores) → aplicación .NET que usa el DLL de ZKTeco → más de 20 dispositivos en paralelo. La corrida nocturna es el momento de verdad: cada biométrico termina alineado con la lista, no con el estado que tenía ayer. SQL Server sostiene el universo de estudiantes; el hardware solo guarda lo que esa lista autoriza.</p>
+        <p>Lista de estudiantes en SQL Server → aplicación .NET que habla con ZKTeco por DLL o por API → biométricos actualizados en masa. La consola muestra la corrida. En el acceso, otra aplicación pinta la foto cuando alguien marca. Dos problemas distintos: poblar el hardware y hacer visible el evento en portería.</p>
       </article>
 
       <article class="case-block">
         <h2>Resultado</h2>
-        <p>Los lectores dejan de divergir. Un estudiante nuevo aparece en los biométricos después de la carga; quien ya no corresponde, desaparece. La operación se ve en consola, no en un tablero decorativo. Para la universidad eso es control de acceso real: la tarjeta funciona donde tiene que funcionar, en todos los puntos a la vez.</p>
+        <p>Las tarjetas se cargan a los dispositivos sin ir uno por uno. Hay un camino por DLL y otro por API, según el caso. En el molinete se ve quién entra y quién sale. Para la universidad eso es control de acceso real: el dato llega al lector y la persona se reconoce en la puerta.</p>
       </article>
 
       <article class="case-block">
         <h2>Aprendizajes</h2>
-        <p>Con hardware, el fallo es el caso normal: un lector caído no puede frenar a los otros veinte. Por eso la carga es asíncrona y la consola importa: si no se ve el error, no se arregla. El horario nocturno no es un detalle: es la única ventana en la que se puede reescribir la población de los dispositivos sin pelear con el flujo del día.</p>
+        <p>Con hardware el fallo es el caso normal: un lector caído no puede frenar al resto. Por eso la carga es masiva y asíncrona. La API y el DLL no son el mismo oficio: uno u otro, según lo que el dispositivo y la red permitan. La pantalla del molinete no es un dashboard: es una señal. Si la foto no se entiende al paso, no sirve.</p>
       </article>
     </div>
   </main>

@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Módulo de marketing educativo · Fernando Santalla</title>
-  <meta name="description" content="Caso de estudio: CRM interno de admisiones en UTEPSA. Prospectos, seguimiento y reportes en Blazor y SQL Server." />
+  <title>Marketing pregrado y postgrado · Fernando Santalla</title>
+  <meta name="description" content="Caso de estudio: CRM de marketing en UTEPSA. Pregrado: prospectos, inscripciones y comisiones. Postgrado: seguimiento continuo y reportes semanales." />
   <link rel="icon" href="../../assets/img/marca/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,9 +42,9 @@
       <a class="back-link" href="../../index.html#proyectos">← Todos los proyectos</a>
       <div class="case-hero">
         <p class="kicker">Caso 05</p>
-        <h1>Módulo de marketing educativo</h1>
+        <h1>Marketing pregrado y postgrado</h1>
         <p class="project-type">CRM interno · UTEPSA · Terminado</p>
-        <p class="lead">Admisiones perdía el rastro de las oportunidades. Un módulo para gestionar prospectos, seguimiento y reportes — sobre el mismo stack que el resto de los sistemas internos.</p>
+        <p class="lead">Dos negocios distintos en la misma universidad. Pregrado registra prospectos, inscribe y reporta comisiones. Postgrado sigue al posible cliente en el tiempo y saca un reporte cada semana.</p>
         <div class="case-meta">
           <span class="chip">Blazor</span>
           <span class="chip">.NET</span>
@@ -59,42 +59,42 @@
 
       <article class="case-block">
         <h2>Contexto</h2>
-        <p>En UTEPSA, marketing y admisiones trabajan con personas que todavía no son estudiantes: consultas, ferias, campañas. Ese pipeline no puede vivir en una hoja compartida si el resto de la institución ya opera sobre SQL Server.</p>
+        <p>En UTEPSA, marketing trabaja con personas que todavía no son estudiantes. Pregrado y postgrado no venden igual: uno cierra en inscripción y comisión; el otro necesita seguimiento continuo. Ese pipeline no puede vivir en una hoja compartida.</p>
       </article>
 
       <article class="case-block">
         <h2>Problema</h2>
-        <p>Sin un CRM interno, la oportunidad se pierde entre un mensaje, una llamada y un olvido. No hay seguimiento común ni una lectura de qué campaña rinde. El dato existe; no está donde el equipo lo puede trabajar al día siguiente.</p>
+        <p>Sin un sistema interno, la oportunidad se pierde entre un mensaje, una llamada y un olvido. Pregrado necesita saber quién se inscribió y qué comisión corresponde. Postgrado necesita no soltar al prospecto y poder mostrar, cada semana, cómo va la cartera.</p>
       </article>
 
       <article class="case-block">
         <h2>Mi participación</h2>
-        <p>Como asistente de programación TI participé en el desarrollo del módulo sobre Blazor y SQL Server: captura de prospectos, seguimiento y reportes para que admisiones vea el embudo, no una lista muerta.</p>
+        <p>Como asistente de programación TI desarrollé el sistema de marketing de pregrado y de postgrado en Blazor y .NET. Pregrado: registro de posibles clientes, inscripciones y reporte de comisiones. Postgrado: seguimiento continuo de prospectos y reportes semanales.</p>
       </article>
 
       <article class="case-block">
         <h2>Proceso</h2>
         <ul>
-          <li>Traducir el flujo real de admisiones a estados que un operador pueda actualizar.</li>
-          <li>Persistir prospectos y movimientos en SQL Server, no en archivos sueltos.</li>
-          <li>Construir las pantallas en Blazor para carga diaria y para la lectura de reportes.</li>
-          <li>Priorizar seguimiento y visibilidad por encima de un tablero bonito.</li>
+          <li>Separar los dos flujos: pregrado no es postgrado, aunque ambos partan de un prospecto.</li>
+          <li>Pregrado: captura del posible cliente, paso a inscripción y reporte de comisiones.</li>
+          <li>Postgrado: seguimiento continuo del posible cliente y generación de reportes semanales.</li>
+          <li>Persistir en SQL Server; pantallas en Blazor para operación diaria y para la lectura.</li>
         </ul>
       </article>
 
       <article class="case-block">
         <h2>Arquitectura y datos</h2>
-        <p>Blazor en el frente. SQL Server como fuente de verdad: persona, origen, estado, seguimiento. Los reportes leen ese modelo. No hay una base “de marketing” aparte de la institucional si se puede evitar.</p>
+        <p>Blazor en el frente. SQL Server como fuente de verdad: persona, origen, estado, inscripción, comisión, seguimiento. Los reportes leen ese modelo. Pregrado y postgrado comparten stack, no el mismo embudo.</p>
       </article>
 
       <article class="case-block">
         <h2>Resultado</h2>
-        <p>Admisiones tiene un lugar donde la oportunidad no se evapora: se registra, se sigue y se reporta. Para la universidad es continuidad; para mí, un CRM que se parece al negocio educativo, no a un producto genérico de ventas.</p>
+        <p>Marketing tiene un lugar para el prospecto: se registra, se inscribe o se sigue, y se reporta. Pregrado cierra el ciclo hasta la comisión. Postgrado no pierde el hilo de la semana. Un CRM que se parece al negocio educativo, no a un producto genérico de ventas.</p>
       </article>
 
       <article class="case-block">
         <h2>Aprendizajes</h2>
-        <p>Un CRM interno fracasa si pide más campos de los que el equipo va a llenar. El estado de la oportunidad tiene que caber en el día de trabajo.</p>
+        <p>Un CRM interno fracasa si pide más campos de los que el equipo va a llenar. Pregrado y postgrado no se resuelven con la misma pantalla: el ritmo del seguimiento es el diseño.</p>
       </article>
     </div>
   </main>

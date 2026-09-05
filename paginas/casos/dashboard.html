@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dashboard empresarial · Fernando Santalla</title>
-  <meta name="description" content="Concepto de capa de visualización para indicadores empresariales sobre Blazor y SQL Server." />
+  <title>Dashboard de gerencia · Fernando Santalla</title>
+  <meta name="description" content="Caso de estudio: dashboard de gerencia en UTEPSA. Ingresos, origen de la recaudación y áreas de mayor ingreso. Blazor y .NET." />
   <link rel="icon" href="../../assets/img/marca/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,38 +42,60 @@
       <a class="back-link" href="../../index.html#proyectos">← Todos los proyectos</a>
       <div class="case-hero">
         <p class="kicker">Caso 06</p>
-        <h1>Dashboard empresarial</h1>
-        <p class="project-type">Visualización y análisis · Concepto</p>
-        <p class="lead">Los datos ya estaban en la base. Faltaba una lectura para decidir: indicadores, no pantallas decoradas.</p>
+        <h1>Dashboard de gerencia</h1>
+        <p class="project-type">Ingresos y análisis · UTEPSA · Terminado</p>
+        <p class="lead">Los datos ya estaban en la base. Gerencia necesitaba ver cuánto entra, de dónde viene y qué partes generan más ingreso — no exportar a Excel para enterarse al mes siguiente.</p>
         <div class="case-meta">
           <span class="chip">Blazor</span>
+          <span class="chip">C#</span>
+          <span class="chip">.NET</span>
           <span class="chip">SQL Server</span>
-          <span class="chip">Reportes</span>
         </div>
       </div>
 
       <figure class="case-shot-hero is-light">
-        <img src="../../assets/img/proyectos/dashboard/portada/Dashboard.png" alt="Dashboard empresarial: ingresos, estudiantes y comparación entre gestiones" />
+        <img src="../../assets/img/proyectos/dashboard/portada/Dashboard.png" alt="Dashboard de gerencia: ingresos, estudiantes y comparación entre gestiones" />
         <figcaption>Lectura de un mes: ingreso, cantidad de estudiantes e ingreso por persona, con comparación entre gestiones. Valores sensibles ocultos.</figcaption>
       </figure>
 
       <article class="case-block">
-        <h2>La idea</h2>
-        <p>Una capa de visualización sobre el modelo que ya existe. El dashboard no crea una verdad nueva: ordena la que ya se captura en la operación —ventas, stock, asistencia, embudo— para que se lea en una pasada.</p>
+        <h2>Contexto</h2>
+        <p>En UTEPSA la operación ya deja rastro en SQL Server. Lo que no existía era una lectura para gerencia: ingresos, origen de esos ingresos y qué áreas pesan más. El análisis tenía que salir del mismo dato, no de una planilla paralela.</p>
       </article>
 
       <article class="case-block">
-        <h2>Qué resolvería</h2>
+        <h2>Problema</h2>
+        <p>Sin un dashboard, “cómo vamos” es una conversación. No se ve de dónde viene el ingreso ni qué parte del negocio lo sostiene. El número suelto no sirve para decidir; hace falta el origen y la comparación.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Mi participación</h2>
+        <p>Como asistente de programación TI desarrollé la página de dashboard para gerencia en Blazor y .NET: ingresos, de dónde vienen, qué partes generan más y el análisis de datos en general.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Proceso</h2>
         <ul>
-          <li>Dejar de exportar a Excel para “ver cómo vamos”.</li>
-          <li>Indicadores con el mismo criterio que el sistema operativo, no un número suelto.</li>
-          <li>Una interfaz que se entiende a distancia: el número, la variación, la pregunta que responde.</li>
+          <li>Leer el modelo que ya existe; no inventar una verdad nueva.</li>
+          <li>Mostrar ingreso, origen y las partes de mayor recaudación.</li>
+          <li>Comparar gestiones para que el número tenga contexto.</li>
+          <li>Priorizar la lectura a distancia: el indicador, la variación, la pregunta que responde.</li>
         </ul>
       </article>
 
       <article class="case-block">
-        <h2>Estado</h2>
-        <p>Concepto. Parte de esta lectura ya aparece en sistemas en producción —por ejemplo el dashboard de decisiones de SisBombastic—. Este caso queda como la línea de trabajo: visualización al servicio de la decisión, no al revés.</p>
+        <h2>Arquitectura y datos</h2>
+        <p>SQL Server como fuente. Blazor pinta la lectura. El dashboard no crea el ingreso: lo agrega y lo corta por origen y por área. Si el número no sale de la operación, no entra al tablero.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Resultado</h2>
+        <p>Gerencia tiene una pantalla para ver el ingreso y su composición. El análisis deja de ser un export. Para mí, el valor está en haber traducido preguntas de negocio —cuánto, de dónde, qué pesa— a consultas y a una interfaz que se entiende en una pasada.</p>
+      </article>
+
+      <article class="case-block">
+        <h2>Aprendizajes</h2>
+        <p>Un dashboard de gerencia no es un collage de gráficos. Cada tarjeta tiene que responder una pregunta. Si no se puede decir en una frase qué muestra, sobra.</p>
       </article>
     </div>
   </main>
