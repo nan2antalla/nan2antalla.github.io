@@ -18,7 +18,7 @@
     });
   });
 
-  const sectionIds = ['portada', 'proyectos', 'acerca', 'lab', 'contacto'];
+  const sectionIds = ['portada', 'proyectos', 'acerca', 'contacto'];
   const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
   const navAnchors = $$('.nav-links a');
   if (sections.length && 'IntersectionObserver' in window) {
