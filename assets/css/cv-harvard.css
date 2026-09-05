@@ -24,7 +24,7 @@ a {
   color: inherit
 }
 
-.harvard-bar {
+.cv-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -33,8 +33,8 @@ a {
   font-family: Georgia, "Times New Roman", serif
 }
 
-.harvard-bar a,
-.harvard-bar button {
+.cv-bar a,
+.cv-bar button {
   font-family: inherit;
   font-size: 14px;
   padding: 8px 14px;
@@ -44,8 +44,8 @@ a {
   text-decoration: none
 }
 
-.harvard-bar a:hover,
-.harvard-bar button:hover {
+.cv-bar a:hover,
+.cv-bar button:hover {
   background: #111;
   color: #fff
 }
@@ -158,23 +158,24 @@ a {
 }
 
 @media print {
-  .harvard-bar {
+  .cv-bar {
     display: none !important
   }
 
   body {
-    background: #fff
+    background: #fff;
+    margin: 0
   }
 
   .sheet {
-    width: auto;
+    width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 12mm 14mm;
     box-shadow: none
   }
 
   @page {
     size: A4;
-    margin: 14mm 16mm
+    margin: 0
   }
 }

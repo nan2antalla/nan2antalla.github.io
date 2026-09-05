@@ -197,13 +197,16 @@ h1 {
 
 .word-design {
   display: block;
-  color: var(--ink)
+  color: var(--ink);
+  font-size: clamp(2.15rem, 5.4vw, 3.5rem);
+  letter-spacing: -.04em;
+  line-height: .95
 }
 
 .word-dev {
   display: block;
   color: var(--magenta);
-  font-size: clamp(1.85rem, 4.6vw, 3.15rem);
+  font-size: clamp(2.05rem, 5.2vw, 3.55rem);
   letter-spacing: -.03em;
   line-height: 1.08
 }
@@ -1066,11 +1069,12 @@ footer a:hover {
 
   body {
     background: #fff;
-    color: #111
+    color: #111;
+    margin: 0
   }
 
   .cv-page {
-    padding: 0
+    padding: 12mm 14mm
   }
 
   .lead-sub,
@@ -1078,6 +1082,11 @@ footer a:hover {
   .cv-job span,
   .cv-block p {
     color: #333
+  }
+
+  @page {
+    size: A4;
+    margin: 0
   }
 }
 
