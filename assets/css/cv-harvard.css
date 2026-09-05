@@ -1,0 +1,180 @@
+:root {
+  --ink: #111;
+  --line: #111;
+  --muted: #333;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  margin: 0;
+  background: #e8e6e1;
+  color: var(--ink);
+  font-family: "Times New Roman", Times, Georgia, serif;
+  line-height: 1.35
+}
+
+a {
+  color: inherit
+}
+
+.harvard-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 16px;
+  font-family: Georgia, "Times New Roman", serif
+}
+
+.harvard-bar a,
+.harvard-bar button {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 14px;
+  border: 1px solid #111;
+  background: #fff;
+  cursor: pointer;
+  text-decoration: none
+}
+
+.harvard-bar a:hover,
+.harvard-bar button:hover {
+  background: #111;
+  color: #fff
+}
+
+.sheet {
+  width: min(210mm, calc(100% - 32px));
+  margin: 0 auto 48px;
+  padding: 18mm 18mm 16mm;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .12)
+}
+
+.sheet header {
+  text-align: center;
+  margin-bottom: 14px
+}
+
+.sheet h1 {
+  margin: 0 0 4px;
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  line-height: 1.15
+}
+
+.role {
+  margin: 0 0 8px;
+  font-size: 12pt;
+  font-style: italic
+}
+
+.contact {
+  margin: 0;
+  font-size: 10.5pt
+}
+
+.contact a {
+  text-decoration: none
+}
+
+.sheet h2 {
+  margin: 14px 0 8px;
+  padding-bottom: 2px;
+  font-size: 11.5pt;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #111
+}
+
+.entry {
+  margin: 0 0 10px
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline
+}
+
+.entry-head b {
+  font-size: 11pt
+}
+
+.where {
+  font-style: italic
+}
+
+.dates {
+  white-space: nowrap;
+  font-size: 10.5pt
+}
+
+.entry ul {
+  margin: 3px 0 0;
+  padding-left: 18px
+}
+
+.entry li,
+.skills p {
+  font-size: 10.5pt;
+  margin: 0 0 2px
+}
+
+.skills p {
+  margin: 0 0 4px
+}
+
+.skills b {
+  font-weight: 700
+}
+
+@media (max-width: 700px) {
+  .sheet {
+    width: calc(100% - 16px);
+    padding: 20px 16px 28px
+  }
+
+  .entry-head {
+    flex-direction: column;
+    gap: 2px
+  }
+
+  .dates {
+    white-space: normal
+  }
+}
+
+@media print {
+  .harvard-bar {
+    display: none !important
+  }
+
+  body {
+    background: #fff
+  }
+
+  .sheet {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: none
+  }
+
+  @page {
+    size: A4;
+    margin: 14mm 16mm
+  }
+}
