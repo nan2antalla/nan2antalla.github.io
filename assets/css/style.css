@@ -202,7 +202,10 @@ h1 {
 
 .word-dev {
   display: block;
-  color: var(--magenta)
+  color: var(--magenta);
+  font-size: clamp(1.55rem, 3.6vw, 2.45rem);
+  letter-spacing: -.03em;
+  line-height: 1.08
 }
 
 .lead {
