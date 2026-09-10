@@ -168,14 +168,14 @@ a {
   }
 
   .sheet {
-    width: 100%;
+    width: auto;
     margin: 0;
-    padding: 12mm 14mm;
+    padding: 0;
     box-shadow: none
   }
 
   @page {
     size: A4;
-    margin: 0
+    margin: 16mm 18mm
   }
 }

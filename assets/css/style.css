@@ -1074,7 +1074,7 @@ footer a:hover {
   }
 
   .cv-page {
-    padding: 12mm 14mm
+    padding: 0
   }
 
   .lead-sub,
@@ -1086,7 +1086,7 @@ footer a:hover {
 
   @page {
     size: A4;
-    margin: 0
+    margin: 16mm 18mm
   }
 }
 
